@@ -1,0 +1,17 @@
+bkp
+backup
+resp
+borra
+dev
+enero
+febrero
+marzo
+abril
+mayo
+junio
+julio
+agosto
+septiembre
+octubre
+noviembre
+diciembre

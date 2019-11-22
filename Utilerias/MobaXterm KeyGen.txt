@@ -1,0 +1,10 @@
+***** Generar Key de MobaXterm ***** 
+
+Ejecutar el siguente comando en una consola de windows (CMD)
+
+Ejemplos:
+
+C:\Users\Arturo\AppData\Local\Programs\Python\Python38-32\python.exe C:\Users\Arturo\Downloads\MobaXterm-keygen-master\MobaXterm-Keygen.py "rhad84" 12.2
+
+
+Copiar el archivo Generado "Custom.mxtpro" en el directorio donde este instalado o el directorio portable del MobaXterm

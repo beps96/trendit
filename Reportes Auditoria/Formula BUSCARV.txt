@@ -1,0 +1,1 @@
+=BUSCARV(B2,$C$2:$C$19,1,FALSO)

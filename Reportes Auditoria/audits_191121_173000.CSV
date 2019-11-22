@@ -1,0 +1,1320 @@
+Timestamp,Username,IP Address,Service Name,Operation,Resource,Allowed,Impersonator,Family,Qualifier,Delegation Token ID,Destination,Permissions,Source,Usage Type,Operation Text,url,Privilege,Query ID,Session ID,Status,Database Name,Object Type,Resource Path,Table Name
+2019-11-21T23:29:29.000Z,imedrano,10.67.59.12,impala,QUERY,bddlcru:ktctget,true,,,,,,,,,"SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE trim(CDTABLA) = 'KTOTVMG'  AND CDIDIOMA ='ES'",,SELECT,a54d9f982bc672c5:25abe65900000000,7840fd85a1f896d7:5bf5c2dc6413e7ae,,bddlcru,TABLE,,ktctget
+2019-11-21T23:25:55.000Z,imedrano,10.67.59.12,impala,QUERY,bddlcru:ktctget,true,,,,,,,,,"select a.* from ( SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE TRIM(CDELEMEN) = '0004'  AND CDIDIOMA ='ES' ) a inner join ( SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE TRIM(CDELEMEN) = '0034'  AND CDIDIOMA ='ES' ) b on (a.CDTABLA = b.CDTABLA) inner join ( SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE TRIM(CDELEMEN) = '0020'  AND CDIDIOMA ='ES' ) c on (a.CDTABLA = c.CDTABLA) inner join ( SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE TRIM(CDELEMEN) = '0002'  AND CDIDIOMA ='ES' ) d on (a.CDTABLA = d.CDTABLA)",,SELECT,4a31d6382aa2e9:2bdd284100000000,7840fd85a1f896d7:5bf5c2dc6413e7ae,,bddlcru,TABLE,,ktctget
+2019-11-21T23:24:45.026Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,"SELECT
+CVE_SISTEMA, anio_mes_contable,
+sum(MTO_IMPORTE_SINIESTRAL) AS MTO_IMPORTE_SINIESTRAL
+FROM BDDLAPR.CNM_SOLICITUD_PAGO
+where ban_contable=1 and cve_sistema='RCLA'
+group by CVE_SISTEMA,anio_mes_contable
+order by CVE_SISTEMA,anio_mes_contable",,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_17-24-45_081_8223190153132502156-28456/-mr-10000,
+2019-11-21T23:24:45.026Z,aarenas,10.67.59.13,hive,QUERY,bddlalm:alm_solicitud_pago,true,,,,,,,,,"SELECT
+CVE_SISTEMA, anio_mes_contable,
+sum(MTO_IMPORTE_SINIESTRAL) AS MTO_IMPORTE_SINIESTRAL
+FROM BDDLAPR.CNM_SOLICITUD_PAGO
+where ban_contable=1 and cve_sistema='RCLA'
+group by CVE_SISTEMA,anio_mes_contable
+order by CVE_SISTEMA,anio_mes_contable",,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/alm_solicitud_pago,alm_solicitud_pago
+2019-11-21T23:24:45.026Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_solicitud_pago,true,,,,,,,,,"SELECT
+CVE_SISTEMA, anio_mes_contable,
+sum(MTO_IMPORTE_SINIESTRAL) AS MTO_IMPORTE_SINIESTRAL
+FROM BDDLAPR.CNM_SOLICITUD_PAGO
+where ban_contable=1 and cve_sistema='RCLA'
+group by CVE_SISTEMA,anio_mes_contable
+order by CVE_SISTEMA,anio_mes_contable",,,,,,bddlapr,VIEW,,cnm_solicitud_pago
+2019-11-21T23:23:41.434Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,"SELECT
+CVE_SISTEMA, anio_mes_contable,
+sum(MTO_IMPORTE_SINIESTRAL) AS MTO_IMPORTE_SINIESTRAL
+FROM BDDLAPR.CNM_SOLICITUD_PAGO
+where ban_contable=1 
+group by CVE_SISTEMA,anio_mes_contable
+order by CVE_SISTEMA,anio_mes_contable",,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_17-23-41_470_73015514011178815-28456/-mr-10000,
+2019-11-21T23:23:41.434Z,aarenas,10.67.59.13,hive,QUERY,bddlalm:alm_solicitud_pago,true,,,,,,,,,"SELECT
+CVE_SISTEMA, anio_mes_contable,
+sum(MTO_IMPORTE_SINIESTRAL) AS MTO_IMPORTE_SINIESTRAL
+FROM BDDLAPR.CNM_SOLICITUD_PAGO
+where ban_contable=1 
+group by CVE_SISTEMA,anio_mes_contable
+order by CVE_SISTEMA,anio_mes_contable",,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/alm_solicitud_pago,alm_solicitud_pago
+2019-11-21T23:23:41.434Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_solicitud_pago,true,,,,,,,,,"SELECT
+CVE_SISTEMA, anio_mes_contable,
+sum(MTO_IMPORTE_SINIESTRAL) AS MTO_IMPORTE_SINIESTRAL
+FROM BDDLAPR.CNM_SOLICITUD_PAGO
+where ban_contable=1 
+group by CVE_SISTEMA,anio_mes_contable
+order by CVE_SISTEMA,anio_mes_contable",,,,,,bddlapr,VIEW,,cnm_solicitud_pago
+2019-11-21T23:22:21.000Z,rachanca,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,8b417efeef595213:feaac94900000000,b24090c1df8a034e:3c0c7f109e8503a7,,,,,
+2019-11-21T23:20:50.708Z,rachanca,10.67.59.12,hive,QUERY,:,true,,,,,,,,,"select num_poliza,vigencia_poliza,num_poliza_cobranza,num_version_poliza,cve_cliente_origen,
+fch_antiguedad_nac,fch_antiguedad_int 
+from bddlapr.cnm_asegurado_datos_adicionales
+where to_date(fch_antiguedad)>='2008-01-01'",,,,,,,DFS_DIR,/tmp/hive/rachanca/9b65138a-5d5b-4742-a340-c00a32606ef0/hive_2019-11-21_17-20-50_718_2621440855624275804-2492/-mr-10000,
+2019-11-21T23:20:50.708Z,rachanca,10.67.59.12,hive,QUERY,bddlalm:alm_asegurado_datos_adicionales,true,,,,,,,,,"select num_poliza,vigencia_poliza,num_poliza_cobranza,num_version_poliza,cve_cliente_origen,
+fch_antiguedad_nac,fch_antiguedad_int 
+from bddlapr.cnm_asegurado_datos_adicionales
+where to_date(fch_antiguedad)>='2008-01-01'",,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/alm_asegurado_datos_adicionales,alm_asegurado_datos_adicionales
+2019-11-21T23:20:50.708Z,rachanca,10.67.59.12,hive,QUERY,bddlapr:cnm_asegurado_datos_adicionales,true,,,,,,,,,"select num_poliza,vigencia_poliza,num_poliza_cobranza,num_version_poliza,cve_cliente_origen,
+fch_antiguedad_nac,fch_antiguedad_int 
+from bddlapr.cnm_asegurado_datos_adicionales
+where to_date(fch_antiguedad)>='2008-01-01'",,,,,,bddlapr,VIEW,,cnm_asegurado_datos_adicionales
+2019-11-21T23:18:40.461Z,rachanca,10.67.59.12,hive,QUERY,:,true,,,,,,,,,select * from bddlapr.cnm_asegurado_datos_adicionales,,,,,,,DFS_DIR,/tmp/hive/rachanca/9b65138a-5d5b-4742-a340-c00a32606ef0/hive_2019-11-21_17-18-40_471_2033496408982288364-2492/-mr-10000,
+2019-11-21T23:18:40.461Z,rachanca,10.67.59.12,hive,QUERY,bddlalm:alm_asegurado_datos_adicionales,true,,,,,,,,,select * from bddlapr.cnm_asegurado_datos_adicionales,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/alm_asegurado_datos_adicionales,alm_asegurado_datos_adicionales
+2019-11-21T23:18:40.461Z,rachanca,10.67.59.12,hive,QUERY,bddlapr:cnm_asegurado_datos_adicionales,true,,,,,,,,,select * from bddlapr.cnm_asegurado_datos_adicionales,,,,,,bddlapr,VIEW,,cnm_asegurado_datos_adicionales
+2019-11-21T23:16:31.692Z,user_fyf,10.67.59.14,hive,QUERY,:,true,,,,,,,,,"
+             --190 seg 36,155
+             -- 36,057
+select count(1) from bddltrn.adc_t_inf_suma_asegurada",,,,,,,DFS_DIR,/tmp/hive/user_fyf/6f19b790-e3d1-4b20-81e6-d034a0588bf0/hive_2019-11-21_17-16-31_704_7186413733048928244-92239/-mr-10000,
+2019-11-21T23:16:31.692Z,user_fyf,10.67.59.14,hive,QUERY,bddltrn:adc_t_inf_suma_asegurada,true,,,,,,,,,"
+             --190 seg 36,155
+             -- 36,057
+select count(1) from bddltrn.adc_t_inf_suma_asegurada",,,,,,bddltrn,TABLE,/user/hive/warehouse/bddltrn.db/adc_t_inf_suma_asegurada,adc_t_inf_suma_asegurada
+2019-11-21T23:16:23.908Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-16-23_921_185081385001554601-2492/-mr-10000,
+2019-11-21T23:16:23.908Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:16:23.908Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:14:36.182Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-14-36_193_65820553676024420-2492/-mr-10000,
+2019-11-21T23:14:36.182Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:14:36.182Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:12:43.547Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+and resultado = 'NULL'
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-12-43_558_6065359495463476273-142852/-mr-10000,
+2019-11-21T23:12:43.547Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+and resultado = 'NULL'
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:12:43.547Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+and resultado = 'NULL'
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:12:40.992Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-12-41_016_5058881118050116580-142852/-mr-10000,
+2019-11-21T23:12:40.992Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:12:40.992Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:12:03.513Z,user_fyf,10.67.59.14,hive,QUERY,:,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,,DFS_DIR,/tmp/hive/user_fyf/6f19b790-e3d1-4b20-81e6-d034a0588bf0/hive_2019-11-21_17-12-03_525_168835544246015997-1/-mr-10000,
+2019-11-21T23:12:03.513Z,user_fyf,10.67.59.14,hive,QUERY,bddlcru:ktpa82t,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,bddlcru,TABLE,/user/hive/warehouse/bddlcru.db/ktpa82t,ktpa82t
+2019-11-21T23:12:03.513Z,user_fyf,10.67.59.14,hive,QUERY,bddlcru:ktpm04t,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,bddlcru,TABLE,/user/hive/warehouse/bddlcru.db/ktpm04t,ktpm04t
+2019-11-21T23:12:03.513Z,user_fyf,10.67.59.14,hive,QUERY,bddltrn:adc_t_inf_uni_poliza_version,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,bddltrn,TABLE,/user/hive/warehouse/bddltrn.db/adc_t_inf_uni_poliza_version,adc_t_inf_uni_poliza_version
+2019-11-21T23:12:03.513Z,user_fyf,10.67.59.14,hive,QUERY,bddlcru:kcim23t,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,bddlcru,TABLE,/user/hive/warehouse/bddlcru.db/kcim23t,kcim23t
+2019-11-21T23:11:57.856Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+and resultado = ""NULL""
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-11-57_867_6663086087152437246-2492/-mr-10000,
+2019-11-21T23:11:57.856Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+and resultado = ""NULL""
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:11:57.856Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+and resultado = ""NULL""
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:11:54.616Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-11-54_639_1709202255682299139-2492/-mr-10000,
+2019-11-21T23:11:54.616Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:11:54.616Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:11:54.425Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-11-54_484_2967078271489942441-2492/-mr-10000,
+2019-11-21T23:11:54.425Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:11:54.425Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:11:54.096Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-11-54_154_6171205851087847897-142852/-mr-10000,
+2019-11-21T23:11:54.096Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:11:54.096Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:11:31.533Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-11-31_557_795819398022094470-142852/-mr-10000,
+2019-11-21T23:11:31.533Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:11:31.533Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:11:31.466Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-11-31_493_1785429269374015694-142852/-mr-10000,
+2019-11-21T23:11:31.466Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:11:31.466Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:11:31.304Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-11-31_378_6572306556008507412-2492/-mr-10000,
+2019-11-21T23:11:31.304Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:11:31.304Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:11:30.665Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-11-30_753_3373128272930825218-2492/-mr-10000,
+2019-11-21T23:11:30.665Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:11:30.665Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:11:28.466Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-11-28_491_1522695010288166608-2492/-mr-10000,
+2019-11-21T23:11:28.466Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:11:28.466Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `resultado` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:10:07.423Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-10-07_433_5983295296373996721-2492/-mr-10000,
+2019-11-21T23:10:07.423Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:10:07.423Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 in (""CIANNE190829017348"",
+""CIANNE190819018933"",
+""CIANNE190722008034"",
+""CIANNE190723018474"",
+""CIANNE190723013582"",
+""CIANNE190823012815"",
+""CIANNE190919022750"",
+""CIANNE190722029095"",
+""CIANNE190922006608"",
+""CIANNE190814031970"",
+""CIANNE190918015577"",
+""CIANNE190823024421"",
+""CIANNE190828003417"",
+""CIANNE190823026691"",
+""CIANNE190820033015"",
+""CIANNE190928006616"",
+""CIANNE190904018107"",
+""CIANNE190831001214"",
+""CIANNE190805025518"",
+""CIANNE190917010800"",
+""CIANNE190829009296"",
+""CIANNE190819011248"",
+""CIANNE190919001834"",
+""CIANNE190723005147"",
+""CIANNE190427002792"",
+""CIANNE190925027424"",
+""CIANNE190903027476"",
+""CIANNE190923036451"",
+""CIANNE190820007026"",
+""CIANNE190726011415"",
+""CIANNE190927030837"",
+""CIANNE190823019820"",
+""CIANNE190925032311"",
+""CIANNE190415003803"",
+""CIANNE190906017333"",
+""CIANNE190913012731"",
+""CIAREN190904000311"",
+""CIANNE190413012018"",
+""CIANNE190910011506"",
+""CIANNE190918031799"")
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:09:16.646Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,SELECT `id_transaccion_10136` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-09-16_672_7386104646738190504-2492/-mr-10000,
+2019-11-21T23:09:16.646Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,SELECT `id_transaccion_10136` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:09:16.646Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,SELECT `id_transaccion_10136` FROM `bddlapr`.`opr_precalificados_emision` LIMIT 100,,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:07:46.813Z,user_fyf,10.67.59.14,hive,QUERY,:,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,,DFS_DIR,/tmp/hive/user_fyf/6f19b790-e3d1-4b20-81e6-d034a0588bf0/hive_2019-11-21_17-07-46_824_1285781734931452032-92239/-mr-10000,
+2019-11-21T23:07:46.813Z,user_fyf,10.67.59.14,hive,QUERY,bddlcru:ktpa82t,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,bddlcru,TABLE,/user/hive/warehouse/bddlcru.db/ktpa82t,ktpa82t
+2019-11-21T23:07:46.813Z,user_fyf,10.67.59.14,hive,QUERY,bddlcru:ktpm04t,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,bddlcru,TABLE,/user/hive/warehouse/bddlcru.db/ktpm04t,ktpm04t
+2019-11-21T23:07:46.813Z,user_fyf,10.67.59.14,hive,QUERY,bddltrn:adc_t_inf_uni_poliza_version,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,bddltrn,TABLE,/user/hive/warehouse/bddltrn.db/adc_t_inf_uni_poliza_version,adc_t_inf_uni_poliza_version
+2019-11-21T23:07:46.813Z,user_fyf,10.67.59.14,hive,QUERY,bddlcru:kcim23t,true,,,,,,,,,"SELECT tbl_tmp_kcim23t.cdnumpol,tbl_tmp_kcim23t.ctvrspol,tbl_tmp_kcim23t.cdprodte,tbl_tmp_kcim23t.cdprodco,
+     
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CPASEGUR' AND join_ktpa82t_ktpm04t.nocampfi IN ('IMCAMP03','IMCAMP04','IMCAMP05') 
+           THEN tbl_tmp_kcim23t.imcamp03
+           ELSE NULL
+           END AS cpasegur,
+           
+       CASE WHEN  join_ktpa82t_ktpm04t.cdelem ='CDOPCLIQ' AND join_ktpa82t_ktpm04t.nocampfi IN ('TXCAMP01','TXCAMP02','TXCAMP10','TXCAMP46') 
+           THEN ''
+           ELSE ''
+           END AS cdopcliq
+         
+     FROM
+         (
+         SELECT u.cdnumpol, u.ctvrspol, u.cdprodte, u.cdprodco, u.imcamp03, u.nurelrem, u.cdmct 
+             FROM (
+                   SELECT polver.cdnumpol, polver.ctvrspol, k23t.nurelrem, TRIM(k23t.cdprodte) AS cdprodte, TRIM(k23t.cdprodco) AS cdprodco,
+     			   MAX(k23t.imcamp03) AS imcamp03, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj,
+                    ROW_NUMBER() OVER(PARTITION BY  polver.cdnumpol ORDER BY  polver.ctvrspol DESC) AS orden
+                   
+                    FROM bddlcru.kcim23t k23t 
+                    INNER JOIN bddltrn.adc_t_inf_uni_poliza_version polver ON k23t.cdnumpol=polver.cdnumpol AND k23t.ctvrspol=polver.ctvrspol 
+                       WHERE k23t.nurelrem=1 
+                       GROUP BY  polver.cdnumpol,  polver.ctvrspol, k23t.nurelrem, k23t.cdprodte, k23t.cdprodco, k23t.cdmct, k23t.cdobjtp, k23t.ctsecobj
+             ) AS u 
+                  WHERE u.orden = 1
+     
+         ) AS tbl_tmp_kcim23t 
+     	 LEFT OUTER JOIN
+         (
+         SELECT DISTINCT tbl_tmp_ktpa82t.cdprodte,tbl_tmp_ktpa82t.cdprodco,tbl_tmp_ktpa82t.cdelem,TRIM(ktpm04t.dselemtp) AS dselemtp,
+             tbl_tmp_ktpa82t.nocampfi,tbl_tmp_ktpa82t.nurerelc AS nurelrem,tbl_tmp_ktpa82t.cdmct 
+             FROM (
+                 SELECT DISTINCT TRIM(ktpa82t.cdprodte) AS cdprodte, TRIM(ktpa82t.cdprodco) AS cdprodco, ktpa82t.cdobjtp, TRIM(ktpa82t.cdelem) AS cdelem,
+                 ktpa82t.nurerelc, TRIM(ktpa82t.nocampfi) AS nocampfi, ktpa82t.cdmcr, ktpa82t.cdmct FROM bddlcru.ktpa82t AS ktpa82t 
+                 
+                   WHERE ktpa82t.nurerelc <> 0 AND ktpa82t.cdmct <> '0000000000' AND ktpa82t.cdmcr = '0000000000' AND 
+                         (TRIM(cdelem) = 'CPASEGUR' OR TRIM(cdelem) = 'CDOPCLIQ') 
+                 
+                 ) AS tbl_tmp_ktpa82t INNER JOIN 
+                 
+                 bddlcru.ktpm04t ON TRIM(ktpm04t.cdelem)=tbl_tmp_ktpa82t.cdelem 
+                     WHERE tbl_tmp_ktpa82t.cdelem IS NOT NULL
+                 
+         ) AS join_ktpa82t_ktpm04t ON
+         
+             tbl_tmp_kcim23t.cdprodte=join_ktpa82t_ktpm04t.cdprodte AND tbl_tmp_kcim23t.cdprodco=join_ktpa82t_ktpm04t.cdprodco 
+             AND tbl_tmp_kcim23t.nurelrem=join_ktpa82t_ktpm04t.nurelrem AND tbl_tmp_kcim23t.cdmct=join_ktpa82t_ktpm04t.cdmct",,,,,,bddlcru,TABLE,/user/hive/warehouse/bddlcru.db/kcim23t,kcim23t
+2019-11-21T23:05:49.000Z,imedrano,10.67.59.12,impala,QUERY,bddltrn:ktom41,true,,,,,,,,,"select count(1),CLPROTI from (  SELECT                                               CDNUMPOL, CTVRSPOL, CDOBJTP, CTSECOBJ,FECONTAB,FECAMBIO,CDCIAGRU,CDNUMREC, INRECIFR, INDEMIAN,NUAPUNTE,FEPROMEC,CDINTERC,TCCDMONE,FECMVTO,TCDOMORI,NUSECMVO,NUTRAB,FECTRAB,                                               CDPRODTE, CDPRODCO, CDESTRUP, CDRAMDGS, TCTINEGO, CDMEDPAG, INFISMOR, CLPROTI, CLPROUN, CDESTRUG, CLGESTI,CLGESUN,                                               CLFILTOM, CDFILPAG,TCTITXCT,CONCAT(TCTITXCT,TCCOPERA) AS CDOPERA, CDMCT, TCCOPERA,                                               IMPCEC01 AS IMPRNTEC,                                  /* PRIMA TECNICA */                                               IMPCEC18 AS IMPCOBRC,                                  /* IMPORTE COMISION BRUTA C*/                                               IMPCEC09 AS DESCCOME,                                  /* DESC. COMERCIAL */                                               IMPCEC03 + IMPCEC07 AS IMREPAFR,                       /* IMP. RECARGOS (PAGO FRACCIONADO Y DESC POR DOMICILIACION) */                                               IMPCEC04 AS IMDERECH,                                  /* DERECHOS */                                               IMPCEC05 AS IMIVAPRN,                                  /* IVA SOBRE PRIMA NETA */                                               IMPCEC06 AS IMIVADER,                                  /* IVA SOBRE DERECHOS */                                               IMPCEC10 AS IMGGINEX,                                  /* GASTOS DE GESTION INTERNA Y EXTERNA */                                               IMPCEC02 AS IMCESCOM,                                  /* CESION DE COMISION */                                               IMPCEC19 AS IMPRNETA,                                  /* PRIMA NETA */                                               IMPCEC20 AS IMPRITOT,                                  /* PRIMA TOTAL */                                               tsultmod,                                               'INFO' AS SISTORIG                                          FROM  bddltrn.ktom41  T                              --- MEC SEGURO DIRECTO                                          WHERE  CDCIAGRU = 'AU'                      /* CODIGO COMPANIA GRUPO */                                                AND TCTITXCT IN ('001','003')              /* TC TIPO TRANSACCION CONTABLE */                                                AND TCCOPERA IN ('004','005')  )X group by CLPROTI",,SELECT,6849c3bc747a4a7f:649c0d4e00000000,7840fd85a1f896d7:5bf5c2dc6413e7ae,,bddltrn,TABLE,,ktom41
+2019-11-21T23:05:31.000Z,imedrano,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,97483bb9aa92bffe:27bf184000000000,7840fd85a1f896d7:5bf5c2dc6413e7ae,,,,,
+2019-11-21T23:05:30.000Z,imedrano,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,b54863ec32cbff7f:cef3e2400000000,7840fd85a1f896d7:5bf5c2dc6413e7ae,,,,,
+2019-11-21T23:05:26.000Z,imedrano,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,9d41cf01f532c0a4:f60c685e00000000,7840fd85a1f896d7:5bf5c2dc6413e7ae,,,,,
+2019-11-21T23:05:24.000Z,imedrano,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_SCHEMAS,,,2d49c23bf1c9cc26:33b6ed9700000000,7840fd85a1f896d7:5bf5c2dc6413e7ae,,,,,
+2019-11-21T23:04:13.766Z,cbbautis,10.67.59.12,hive,QUERY,:,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 = ""CIANNE190829017348""
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,,DFS_DIR,/tmp/hive/cbbautis/867db656-7bb9-45ca-8b7b-9ed53bf38b60/hive_2019-11-21_17-04-13_777_7553276315250105176-2492/-mr-10000,
+2019-11-21T23:04:13.766Z,cbbautis,10.67.59.12,hive,QUERY,bddlalm:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 = ""CIANNE190829017348""
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlalm,TABLE,/user/hive/warehouse/bddlalm.db/opr_precalificados_emision,opr_precalificados_emision
+2019-11-21T23:04:13.766Z,cbbautis,10.67.59.12,hive,QUERY,bddlapr:opr_precalificados_emision,true,,,,,,,,,"select DISTINCT * from bddlapr.opr_precalificados_emision
+WHERE id_transaccion_10136 = ""CIANNE190829017348""
+order by fch_validacion desc , opr_precalificados_emision.fch_resolucion_tramite",,,,,,bddlapr,VIEW,,opr_precalificados_emision
+2019-11-21T23:00:25.465Z,user_gmm,10.67.59.12,hive,QUERY,:,true,,,,,,,,,"       select * 
+      from bddlcru.cat_hom_460_subramo_admvo_pol",,,,,,,DFS_DIR,/tmp/hive/user_gmm/2c12ff5b-f4c5-43b3-8125-5256b7aa413d/hive_2019-11-21_17-00-25_476_5320870023419486725-1/-mr-10000,
+2019-11-21T23:00:25.465Z,user_gmm,10.67.59.12,hive,QUERY,bddlcru:cat_hom_460_subramo_admvo_pol,true,,,,,,,,,"       select * 
+      from bddlcru.cat_hom_460_subramo_admvo_pol",,,,,,bddlcru,TABLE,/user/hive/warehouse/bddlcru.db/cat_hom_460_subramo_admvo_pol,cat_hom_460_subramo_admvo_pol
+2019-11-21T22:59:12.925Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,"select distinct des_segmento,cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('031','033','034')",,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_16-59-12_935_8535325599071869793-49/-mr-10000,
+2019-11-21T22:59:12.925Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_poliza,true,,,,,,,,,"select distinct des_segmento,cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('031','033','034')",,,,,,bddlapr,TABLE,/user/hive/warehouse/bddlapr.db/cnm_poliza,cnm_poliza
+2019-11-21T22:54:13.512Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,"select distinct cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('031','033','034')",,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_16-54-13_523_7450372747025567050-49/-mr-10000,
+2019-11-21T22:54:13.512Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_poliza,true,,,,,,,,,"select distinct cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('031','033','034')",,,,,,bddlapr,TABLE,/user/hive/warehouse/bddlapr.db/cnm_poliza,cnm_poliza
+2019-11-21T22:54:13.000Z,cbbautis,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,5048fee5a81032d8:87ecb0af00000000,d24c00eed487cac2:5839732d2d52a584,,,,,
+2019-11-21T22:54:12.000Z,cbbautis,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_SCHEMAS,,,c94ec1e580b53f9c:4b60554800000000,d24c00eed487cac2:5839732d2d52a584,,,,,
+2019-11-21T22:53:21.732Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,"select  cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('031','033','034')",,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_16-53-21_743_4904376321145864406-49/-mr-10000,
+2019-11-21T22:53:21.732Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_poliza,true,,,,,,,,,"select  cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('031','033','034')",,,,,,bddlapr,TABLE,/user/hive/warehouse/bddlapr.db/cnm_poliza,cnm_poliza
+2019-11-21T22:52:46.069Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,select  distinct cve_cobertura_contable from cnm_poliza,,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_16-52-46_080_7013418219901738203-28456/-mr-10000,
+2019-11-21T22:52:46.069Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_poliza,true,,,,,,,,,select  distinct cve_cobertura_contable from cnm_poliza,,,,,,bddlapr,TABLE,/user/hive/warehouse/bddlapr.db/cnm_poliza,cnm_poliza
+2019-11-21T22:52:08.668Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,"select  cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('31','33','34')",,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_16-52-08_678_6251293728050380532-28456/-mr-10000,
+2019-11-21T22:52:08.668Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_poliza,true,,,,,,,,,"select  cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('31','33','34')",,,,,,bddlapr,TABLE,/user/hive/warehouse/bddlapr.db/cnm_poliza,cnm_poliza
+2019-11-21T22:50:33.527Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,"select  cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('31','33','34')",,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_16-50-33_538_8801550676340722093-28456/-mr-10000,
+2019-11-21T22:50:33.527Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_poliza,true,,,,,,,,,"select  cve_cobertura_contable, des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza
+where cve_cobertura_contable in ('31','33','34')",,,,,,bddlapr,TABLE,/user/hive/warehouse/bddlapr.db/cnm_poliza,cnm_poliza
+2019-11-21T22:49:22.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN (`au_restec_hist`.`dedo_circ` = 'BAJA CALIFORNIA NTE.') THEN 'BAJA CALIFORNIA' ELSE `au_restec_hist`.`dedo_circ` END) AS `calculation_4047047265005473799`,   SUM(`au_restec_hist`.`pridevret`) AS `temp_calculation_4047047264915390467__1042607753__0_`,   SUM(`au_restec_hist`.`restec_aor`) AS `temp_calculation_4047047264915390467__3521298910__0_`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` WHERE (CAST(`au_restec_hist`.`anio_comp` AS STRING) = '2019') GROUP BY 1",,SELECT,be41d044324b3f80:f4af660f00000000,444851a14238f622:21006f5b340e9591,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:38.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT CONCAT(CONCAT('20', (CASE WHEN (3 IS NULL) OR (2 IS NULL) THEN CAST(NULL AS STRING)       WHEN 2 < 1 THEN ''       WHEN 3 < 1 THEN SUBSTRING(`au_restec_hist`.`fec_dia15`,CAST(1 AS INT),CAST(2 AS INT))       ELSE SUBSTRING(`au_restec_hist`.`fec_dia15`,CAST(3 AS INT),CAST(2 AS INT)) END)), (CASE WHEN (6 IS NULL) OR (2 IS NULL) THEN CAST(NULL AS STRING)       WHEN 2 < 1 THEN ''       WHEN 6 < 1 THEN SUBSTRING(`au_restec_hist`.`fec_dia15`,CAST(1 AS INT),CAST(2 AS INT))       ELSE SUBSTRING(`au_restec_hist`.`fec_dia15`,CAST(6 AS INT),CAST(2 AS INT)) END)) AS `calculation_2332020234064994309`,   MAX(CAST(`au_restec_hist`.`anio_comp` AS STRING)) AS `temp_attr_anio_comp_nk__2015190288__0_`,   MIN(CAST(`au_restec_hist`.`anio_comp` AS STRING)) AS `temp_attr_anio_comp_nk__891362229__0_`,   MAX(`au_restec_hist`.`dmes`) AS `temp_attr_dmes_nk__1065471635__0_`,   MIN(`au_restec_hist`.`dmes`) AS `temp_attr_dmes_nk__3066611086__0_`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok`,   SUM(`au_restec_hist`.`sinies`) AS `sum_sinies_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` WHERE (CAST(`au_restec_hist`.`anio_comp` AS STRING) IN ('2015', '2016', '2017', '2018', '2019')) GROUP BY 1",,SELECT,744b227209178e48:b2ea9b9d00000000,444851a14238f622:21006f5b340e9591,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:38.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN (`au_restec_hist`.`dedo_circ` = 'BAJA CALIFORNIA NTE.') THEN 'BAJA CALIFORNIA' ELSE `au_restec_hist`.`dedo_circ` END) AS `calculation_4047047265005473799`,   SUM(`au_restec_hist`.`pridevret`) AS `temp_calculation_4047047264914739201__1042607753__0_`,   SUM(`au_restec_hist`.`sinies`) AS `temp_calculation_4047047264914739201__771842139__0_`,   SUM(`au_restec_hist`.`restec_aor`) AS `temp_calculation_4047047264915390467__3521298910__0_`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` WHERE (CAST(`au_restec_hist`.`anio_comp` AS STRING) = '2019') GROUP BY 1",,SELECT,8a44c2215ae42c6b:fd34cd7c00000000,ec424df2377e776a:9f4e5ec347992e82,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:38.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`dgcta_neg` AS `dgcta_neg` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1,,SELECT,f749c9806ca9c9c2:d1fd1f900000000,18499d3fcd61b1dd:7eb22bd16d2ee289,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:32.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_val_sa_oct19,true,,,,,,,,,"SELECT count(DISTINCT num_poliza) FROM bddldes.crm_01_tablero_perfil_oct19 WHERE cve_ramo='SA' AND num_poliza not in ( SELECT DISTINCT cdnumpol                         FROM bddldes.crm_val_sa_oct19                         WHERE CDNUMPOL in (SELECT DISTINCT num_poliza                                             FROM bddldes.crm_01_tablero_perfil_oct19                                             WHERE cve_ramo='SA'))",,SELECT,c8466d15ed02b567:6bf7866200000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_val_sa_oct19
+2019-11-21T22:48:32.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_01_tablero_perfil_oct19,true,,,,,,,,,"SELECT count(DISTINCT num_poliza) FROM bddldes.crm_01_tablero_perfil_oct19 WHERE cve_ramo='SA' AND num_poliza not in ( SELECT DISTINCT cdnumpol                         FROM bddldes.crm_val_sa_oct19                         WHERE CDNUMPOL in (SELECT DISTINCT num_poliza                                             FROM bddldes.crm_01_tablero_perfil_oct19                                             WHERE cve_ramo='SA'))",,SELECT,c8466d15ed02b567:6bf7866200000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_01_tablero_perfil_oct19
+2019-11-21T22:48:27.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`subcanal` AS `subcanal` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY `au_restec_hist`.`subcanal` ASC NULLS FIRST,,SELECT,2442c430f6528e57:1877426300000000,564151b848f5de2e:ae733f7f1fbb63be,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:27.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`dmes` AS `dmes` FROM `bddldes`.`au_restec_hist` `au_restec_hist` WHERE (CAST(`au_restec_hist`.`anio_comp` AS STRING) = '2019') GROUP BY 1,,SELECT,e248aeffa1367e63:9ace165400000000,fb4367b57cd5cd19:4ab134df9d9258b4,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:27.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`tipo_pro` AS `tipo_pro` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 LIMIT 48,,SELECT,54437f36fc71b213:3e0e033e00000000,444851a14238f622:21006f5b340e9591,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:27.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`canal` AS `canal` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY `au_restec_hist`.`canal` ASC NULLS FIRST,,SELECT,f447c05de871b171:e28c876e00000000,d140bffa824f11e2:538fed708a7542ae,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:26.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`segmento` AS `segmento` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY `au_restec_hist`.`segmento` ASC NULLS FIRST,,SELECT,68493a469bfe91a6:cb9456b100000000,2a4d7e1b19e03b90:78a9c5b3f759baac,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:26.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`tipo_pro` AS `tipo_pro` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY `au_restec_hist`.`tipo_pro` ASC NULLS FIRST,,SELECT,6045aea4c0673ba7:6462e7c400000000,f84bcdea0680d1d4:957fa41e7c140fba,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:25.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY CAST(`au_restec_hist`.`anio_comp` AS STRING) ASC NULLS FIRST,,SELECT,3a4ca6b855fde8f7:98c2202c00000000,5b4dd1db11478c98:32a6ffe8faccd39b,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:48:25.000Z,,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_COLUMNS,,,c642905d6b6ee52a:b7d8d9fc00000000,5b4dd1db11478c98:32a6ffe8faccd39b,,,,,
+2019-11-21T22:47:55.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_val_sa_oct19,true,,,,,,,,,"SELECT count(DISTINCT CDNUMPOL) FROM bddldes.crm_val_sa_oct19 WHERE cdnumpol not in ( SELECT DISTINCT cdnumpol                         FROM bddldes.crm_val_sa_oct19                          WHERE CDNUMPOL in (SELECT DISTINCT num_poliza                                              FROM bddldes.crm_01_tablero_perfil_oct19                                              WHERE cve_ramo='SA'))",,SELECT,544e0a25c3077f0d:a347cc4700000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_val_sa_oct19
+2019-11-21T22:47:55.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_01_tablero_perfil_oct19,true,,,,,,,,,"SELECT count(DISTINCT CDNUMPOL) FROM bddldes.crm_val_sa_oct19 WHERE cdnumpol not in ( SELECT DISTINCT cdnumpol                         FROM bddldes.crm_val_sa_oct19                          WHERE CDNUMPOL in (SELECT DISTINCT num_poliza                                              FROM bddldes.crm_01_tablero_perfil_oct19                                              WHERE cve_ramo='SA'))",,SELECT,544e0a25c3077f0d:a347cc4700000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_01_tablero_perfil_oct19
+2019-11-21T22:47:09.000Z,imedrano,10.67.59.12,impala,QUERY,bddltrn:ktom41,true,,,,,,,,,"select count(1),CLPROTI from (  SELECT                                               CDNUMPOL, CTVRSPOL, CDOBJTP, CTSECOBJ,FECONTAB,FECAMBIO,CDCIAGRU,CDNUMREC, INRECIFR, INDEMIAN,NUAPUNTE,FEPROMEC,CDINTERC,TCCDMONE,FECMVTO,TCDOMORI,NUSECMVO,NUTRAB,FECTRAB,                                               CDPRODTE, CDPRODCO, CDESTRUP, CDRAMDGS, TCTINEGO, CDMEDPAG, INFISMOR, CLPROTI, CLPROUN, CDESTRUG, CLGESTI,CLGESUN,                                               CLFILTOM, CDFILPAG,TCTITXCT,CONCAT(TCTITXCT,TCCOPERA) AS CDOPERA, CDMCT, TCCOPERA,                                               IMPCEC01 AS IMPRNTEC,                                  /* PRIMA TECNICA */                                               IMPCEC18 AS IMPCOBRC,                                  /* IMPORTE COMISION BRUTA C*/                                               IMPCEC09 AS DESCCOME,                                  /* DESC. COMERCIAL */                                               IMPCEC03 + IMPCEC07 AS IMREPAFR,                       /* IMP. RECARGOS (PAGO FRACCIONADO Y DESC POR DOMICILIACION) */                                               IMPCEC04 AS IMDERECH,                                  /* DERECHOS */                                               IMPCEC05 AS IMIVAPRN,                                  /* IVA SOBRE PRIMA NETA */                                               IMPCEC06 AS IMIVADER,                                  /* IVA SOBRE DERECHOS */                                               IMPCEC10 AS IMGGINEX,                                  /* GASTOS DE GESTION INTERNA Y EXTERNA */                                               IMPCEC02 AS IMCESCOM,                                  /* CESION DE COMISION */                                               IMPCEC19 AS IMPRNETA,                                  /* PRIMA NETA */                                               IMPCEC20 AS IMPRITOT,                                  /* PRIMA TOTAL */                                               tsultmod,                                               'INFO' AS SISTORIG                                          FROM  bddltrn.ktom41  T                              --- MEC SEGURO DIRECTO                                          WHERE  CDCIAGRU = 'AU'                      /* CODIGO COMPANIA GRUPO */                                                AND TCTITXCT IN ('001','003')              /* TC TIPO TRANSACCION CONTABLE */                                                AND TCCOPERA IN ('004','005')  )X group by CLPROTI",,SELECT,4d45544d3da5f202:37f520b600000000,ea45e81a4bdab095:6e358fa57dd055b1,,bddltrn,TABLE,,ktom41
+2019-11-21T22:47:04.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN (`au_restec_hist`.`dedo_circ` = 'BAJA CALIFORNIA NTE.') THEN 'BAJA CALIFORNIA' ELSE `au_restec_hist`.`dedo_circ` END) AS `calculation_4047047265005473799`,   SUM(`au_restec_hist`.`pridevret`) AS `temp_calculation_4047047264914739201__1042607753__0_`,   SUM(`au_restec_hist`.`sinies`) AS `temp_calculation_4047047264914739201__771842139__0_`,   SUM(`au_restec_hist`.`restec_aor`) AS `temp_calculation_4047047264915390467__3521298910__0_`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` WHERE (CAST(`au_restec_hist`.`anio_comp` AS STRING) = '2019') GROUP BY 1",,SELECT,e04a1d59cb1b9a00:5956952900000000,5f4bbf7d5a41c6a1:302bd480ca4a6b92,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:47:04.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`subcanal` AS `subcanal` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY `au_restec_hist`.`subcanal` ASC NULLS FIRST,,SELECT,e04c43cd9a35108f:4bc9a1d500000000,6646e1811131f170:6dc9f749bc4d94af,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:47:04.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`dgcta_neg` AS `dgcta_neg` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1,,SELECT,3f454d697a0c1451:e30e39d300000000,6f40ef19d30c57bc:88842c37a005109d,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:47:04.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`dmes` AS `dmes` FROM `bddldes`.`au_restec_hist` `au_restec_hist` WHERE (CAST(`au_restec_hist`.`anio_comp` AS STRING) = '2019') GROUP BY 1,,SELECT,65477cce13a7bb1e:501166a500000000,b742e1f365d883a8:d5538674e76d518b,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:47:03.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`tipo_pro` AS `tipo_pro` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY `au_restec_hist`.`tipo_pro` ASC NULLS FIRST,,SELECT,834c439105b1637e:33de8d8400000000,af4772cbc9f24437:f4d07a42ea5d509a,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:47:03.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`segmento` AS `segmento` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY `au_restec_hist`.`segmento` ASC NULLS FIRST,,SELECT,d94f68ab3cfcfbb7:1c3340b500000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:47:03.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`canal` AS `canal` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY `au_restec_hist`.`canal` ASC NULLS FIRST,,SELECT,ff40c2d21722d73f:f415ed5b00000000,3c4da33efb5789c1:a265ff9b5672a68c,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:45:18.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_val_sa_oct19,true,,,,,,,,,"SELECT COUNT(DISTINCT cdnumpol) FROM bddldes.crm_val_sa_oct19 WHERE CDNUMPOL in (SELECT DISTINCT num_poliza                     FROM bddldes.crm_01_tablero_perfil_oct19                     WHERE cve_ramo='SA')",,SELECT,62490970399d856f:e03cab0500000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_val_sa_oct19
+2019-11-21T22:45:18.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_01_tablero_perfil_oct19,true,,,,,,,,,"SELECT COUNT(DISTINCT cdnumpol) FROM bddldes.crm_val_sa_oct19 WHERE CDNUMPOL in (SELECT DISTINCT num_poliza                     FROM bddldes.crm_01_tablero_perfil_oct19                     WHERE cve_ramo='SA')",,SELECT,62490970399d856f:e03cab0500000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_01_tablero_perfil_oct19
+2019-11-21T22:44:00.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_01_tablero_perfil_oct19,true,,,,,,,,," SELECT COUNT(DISTINCT num_poliza) FROM bddldes.crm_01_tablero_perfil_oct19 where cve_ramo='SA'",,SELECT,9f40d6acbd4b1489:6d358ca400000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_01_tablero_perfil_oct19
+2019-11-21T22:43:41.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_val_sa_oct19,true,,,,,,,,,"SELECT COUNT(DISTINCT cdnumpol) from bddldes.crm_val_sa_oct19",,SELECT,f45bbdeed88bbb0:5ee2cbbc00000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_val_sa_oct19
+2019-11-21T22:43:30.782Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,"select distinct cve_cobertura_contable des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza",,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_16-43-30_793_7543316470626055217-28456/-mr-10000,
+2019-11-21T22:43:30.782Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_poliza,true,,,,,,,,,"select distinct cve_cobertura_contable des_cobertura_contable,des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza",,,,,,bddlapr,TABLE,/user/hive/warehouse/bddlapr.db/cnm_poliza,cnm_poliza
+2019-11-21T22:41:47.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_val_sa_oct19,true,,,,,,,,," select distinct am_proc FROM crm_val_sa_oct19",,SELECT,464d6a83bbd1add3:ea9519a300000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_val_sa_oct19
+2019-11-21T22:41:43.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN ((`au_restec_hist`.`dgrupo2` = 'ADMON ESPECIAL') OR (`au_restec_hist`.`dgrupo2` = 'AUTOMOVILES') OR (`au_restec_hist`.`dgrupo2` = 'DECLARACIONES') OR (`au_restec_hist`.`dgrupo2` = 'FRONTERIZOS AUTO') OR (`au_restec_hist`.`dgrupo2` = 'MOTOCICLETAS') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS AUT') OR (`au_restec_hist`.`dgrupo2` = 'PLAN PISO') OR (`au_restec_hist`.`dgrupo2` = 'SIN DATOS') OR (`au_restec_hist`.`dgrupo2` = 'TURISTAS')) THEN 'RESIDENTES' WHEN ((`au_restec_hist`.`dgrupo2` = 'CAMIONES') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS BUS') OR (`au_restec_hist`.`dgrupo2` = 'REMOLQUES') OR (`au_restec_hist`.`dgrupo2` = 'TRACTOCAMIONES')) THEN 'EQUIPO PESADO' ELSE 'PICK UPS' END) AS `calculation_4047047265015230472`,   CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` WHERE (`au_restec_hist`.`dmes` NOT IN ('Diciembre', 'Noviembre', 'Octubre')) GROUP BY 1,   2",,SELECT,56436511fa4318fc:df553d2d00000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:41:36.000Z,vperezhe,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,7f4af68bc70d1673:2744322700000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,,,,
+2019-11-21T22:41:13.000Z,vperezhe,10.67.59.12,impala,QUERY,bddldes:crm_val_sa_oct19,true,,,,,,,,," select *  FROM crm_val_sa_oct19",,SELECT,d4763246d06ba15:fac9b86300000000,b4e4a2664c7f2ec:297fbb48c1f2129c,,bddldes,TABLE,,crm_val_sa_oct19
+2019-11-21T22:40:41.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN ((`au_restec_hist`.`dgrupo2` = 'ADMON ESPECIAL') OR (`au_restec_hist`.`dgrupo2` = 'AUTOMOVILES') OR (`au_restec_hist`.`dgrupo2` = 'DECLARACIONES') OR (`au_restec_hist`.`dgrupo2` = 'FRONTERIZOS AUTO') OR (`au_restec_hist`.`dgrupo2` = 'MOTOCICLETAS') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS AUT') OR (`au_restec_hist`.`dgrupo2` = 'PLAN PISO') OR (`au_restec_hist`.`dgrupo2` = 'SIN DATOS') OR (`au_restec_hist`.`dgrupo2` = 'TURISTAS')) THEN 'RESIDENTES' WHEN ((`au_restec_hist`.`dgrupo2` = 'CAMIONES') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS BUS') OR (`au_restec_hist`.`dgrupo2` = 'REMOLQUES') OR (`au_restec_hist`.`dgrupo2` = 'TRACTOCAMIONES')) THEN 'EQUIPO PESADO' ELSE 'PICK UPS' END) AS `calculation_4047047265015230472`,   COUNT(`au_restec_hist`.`priemi`) AS `temp_temp_tc___2692552603__0___1205761326__0_`,   SUM(`au_restec_hist`.`priemi`) AS `temp_temp_tc___2692552603__0___3703150471__0_`,   CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1,   4",,SELECT,f14f3f1425ba79e1:640d758e00000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:40:07.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN ((`au_restec_hist`.`dgrupo2` = 'ADMON ESPECIAL') OR (`au_restec_hist`.`dgrupo2` = 'AUTOMOVILES') OR (`au_restec_hist`.`dgrupo2` = 'DECLARACIONES') OR (`au_restec_hist`.`dgrupo2` = 'FRONTERIZOS AUTO') OR (`au_restec_hist`.`dgrupo2` = 'MOTOCICLETAS') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS AUT') OR (`au_restec_hist`.`dgrupo2` = 'PLAN PISO') OR (`au_restec_hist`.`dgrupo2` = 'SIN DATOS') OR (`au_restec_hist`.`dgrupo2` = 'TURISTAS')) THEN 'RESIDENTES' WHEN ((`au_restec_hist`.`dgrupo2` = 'CAMIONES') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS BUS') OR (`au_restec_hist`.`dgrupo2` = 'REMOLQUES') OR (`au_restec_hist`.`dgrupo2` = 'TRACTOCAMIONES')) THEN 'EQUIPO PESADO' ELSE 'PICK UPS' END) AS `calculation_4047047265015230472`,   CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp`,   AVG(`au_restec_hist`.`priemi`) AS `avg_priemi_ok`,   COUNT(`au_restec_hist`.`priemi`) AS `cnt_priemi_ok`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1,   2",,SELECT,7e47a92fc11f8b98:ba07228e00000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:39:44.661Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,"select distinct des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza",,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_16-39-44_672_2733531212570219713-28456/-mr-10000,
+2019-11-21T22:39:44.661Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_poliza,true,,,,,,,,,"select distinct des_negocio, des_canal_venta,des_prod_tecnico from cnm_poliza",,,,,,bddlapr,TABLE,/user/hive/warehouse/bddlapr.db/cnm_poliza,cnm_poliza
+2019-11-21T22:39:07.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN ((`au_restec_hist`.`dgrupo2` = 'ADMON ESPECIAL') OR (`au_restec_hist`.`dgrupo2` = 'AUTOMOVILES') OR (`au_restec_hist`.`dgrupo2` = 'DECLARACIONES') OR (`au_restec_hist`.`dgrupo2` = 'FRONTERIZOS AUTO') OR (`au_restec_hist`.`dgrupo2` = 'MOTOCICLETAS') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS AUT') OR (`au_restec_hist`.`dgrupo2` = 'PLAN PISO') OR (`au_restec_hist`.`dgrupo2` = 'SIN DATOS') OR (`au_restec_hist`.`dgrupo2` = 'TURISTAS')) THEN 'RESIDENTES' WHEN ((`au_restec_hist`.`dgrupo2` = 'CAMIONES') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS BUS') OR (`au_restec_hist`.`dgrupo2` = 'REMOLQUES') OR (`au_restec_hist`.`dgrupo2` = 'TRACTOCAMIONES')) THEN 'EQUIPO PESADO' ELSE 'PICK UPS' END) AS `calculation_4047047265015230472`,   CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp`,   AVG(`au_restec_hist`.`priemi`) AS `avg_priemi_ok`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1,   2",,SELECT,7416fa997a3c0c9:911d433f00000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:38:20.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN ((`au_restec_hist`.`dgrupo2` = 'ADMON ESPECIAL') OR (`au_restec_hist`.`dgrupo2` = 'AUTOMOVILES') OR (`au_restec_hist`.`dgrupo2` = 'DECLARACIONES') OR (`au_restec_hist`.`dgrupo2` = 'FRONTERIZOS AUTO') OR (`au_restec_hist`.`dgrupo2` = 'MOTOCICLETAS') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS AUT') OR (`au_restec_hist`.`dgrupo2` = 'PLAN PISO') OR (`au_restec_hist`.`dgrupo2` = 'SIN DATOS') OR (`au_restec_hist`.`dgrupo2` = 'TURISTAS')) THEN 'RESIDENTES' WHEN ((`au_restec_hist`.`dgrupo2` = 'CAMIONES') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS BUS') OR (`au_restec_hist`.`dgrupo2` = 'REMOLQUES') OR (`au_restec_hist`.`dgrupo2` = 'TRACTOCAMIONES')) THEN 'EQUIPO PESADO' ELSE 'PICK UPS' END) AS `calculation_4047047265015230472`,   CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp`,   AVG(`au_restec_hist`.`priemi`) AS `avg_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1,   2",,SELECT,3a4609b65debf6a0:1ac106e700000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:37:57.000Z,ilicealo,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,954e80582d6d1b24:b2a9149800000000,e41b46372f1452b:eb18db74d344ff98,,,,,
+2019-11-21T22:37:40.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN ((`au_restec_hist`.`dgrupo2` = 'ADMON ESPECIAL') OR (`au_restec_hist`.`dgrupo2` = 'AUTOMOVILES') OR (`au_restec_hist`.`dgrupo2` = 'DECLARACIONES') OR (`au_restec_hist`.`dgrupo2` = 'FRONTERIZOS AUTO') OR (`au_restec_hist`.`dgrupo2` = 'MOTOCICLETAS') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS AUT') OR (`au_restec_hist`.`dgrupo2` = 'PLAN PISO') OR (`au_restec_hist`.`dgrupo2` = 'SIN DATOS') OR (`au_restec_hist`.`dgrupo2` = 'TURISTAS')) THEN 'RESIDENTES' WHEN ((`au_restec_hist`.`dgrupo2` = 'CAMIONES') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS BUS') OR (`au_restec_hist`.`dgrupo2` = 'REMOLQUES') OR (`au_restec_hist`.`dgrupo2` = 'TRACTOCAMIONES')) THEN 'EQUIPO PESADO' ELSE 'PICK UPS' END) AS `calculation_4047047265015230472`,   CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1,   2",,SELECT,2143099b5aee6fb0:7204aabf00000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:37:36.000Z,ilicealo,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,ed4399849dce8203:8de15d6900000000,e41b46372f1452b:eb18db74d344ff98,,,,,
+2019-11-21T22:37:36.000Z,ilicealo,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,e3497e56f426d4a6:9f54be4600000000,e41b46372f1452b:eb18db74d344ff98,,,,,
+2019-11-21T22:37:25.959Z,aarenas,10.67.59.13,hive,QUERY,:,true,,,,,,,,,select * from cnm_poliza,,,,,,,DFS_DIR,/tmp/hive/aarenas/2d4694e1-e4ed-44d8-8bfd-f0846e884b3c/hive_2019-11-21_16-37-25_971_3444393339391004276-49/-mr-10000,
+2019-11-21T22:37:25.959Z,aarenas,10.67.59.13,hive,QUERY,bddlapr:cnm_poliza,true,,,,,,,,,select * from cnm_poliza,,,,,,bddlapr,TABLE,/user/hive/warehouse/bddlapr.db/cnm_poliza,cnm_poliza
+2019-11-21T22:37:04.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN ((`au_restec_hist`.`dgrupo2` = 'ADMON ESPECIAL') OR (`au_restec_hist`.`dgrupo2` = 'AUTOMOVILES') OR (`au_restec_hist`.`dgrupo2` = 'DECLARACIONES') OR (`au_restec_hist`.`dgrupo2` = 'FRONTERIZOS AUTO') OR (`au_restec_hist`.`dgrupo2` = 'MOTOCICLETAS') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS AUT') OR (`au_restec_hist`.`dgrupo2` = 'PLAN PISO') OR (`au_restec_hist`.`dgrupo2` = 'SIN DATOS') OR (`au_restec_hist`.`dgrupo2` = 'TURISTAS')) THEN 'RESIDENTES' WHEN ((`au_restec_hist`.`dgrupo2` = 'CAMIONES') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS BUS') OR (`au_restec_hist`.`dgrupo2` = 'REMOLQUES') OR (`au_restec_hist`.`dgrupo2` = 'TRACTOCAMIONES')) THEN 'EQUIPO PESADO' ELSE 'PICK UPS' END) AS `calculation_4047047265015230472`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1",,SELECT,3f4229d132c2c125:8607933100000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:37:01.000Z,ilicealo,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,8246999f587d925b:3eab6e0a00000000,e41b46372f1452b:eb18db74d344ff98,,,,,
+2019-11-21T22:37:01.000Z,ilicealo,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,6542322768df5cd0:685943900000000,e41b46372f1452b:eb18db74d344ff98,,,,,
+2019-11-21T22:36:46.000Z,imedrano,10.67.59.12,impala,QUERY,bddltrn:ktom41,true,,,,,,,,,"select count(1),INRECIFR from (  SELECT                                               CDNUMPOL, CTVRSPOL, CDOBJTP, CTSECOBJ,FECONTAB,FECAMBIO,CDCIAGRU,CDNUMREC, INRECIFR, INDEMIAN,NUAPUNTE,FEPROMEC,CDINTERC,TCCDMONE,FECMVTO,TCDOMORI,NUSECMVO,NUTRAB,FECTRAB,                                               CDPRODTE, CDPRODCO, CDESTRUP, CDRAMDGS, TCTINEGO, CDMEDPAG, INFISMOR, CLPROTI, CLPROUN, CDESTRUG, CLGESTI,CLGESUN,                                               CLFILTOM, CDFILPAG,TCTITXCT,CONCAT(TCTITXCT,TCCOPERA) AS CDOPERA, CDMCT, TCCOPERA,                                               IMPCEC01 AS IMPRNTEC,                                  /* PRIMA TECNICA */                                               IMPCEC18 AS IMPCOBRC,                                  /* IMPORTE COMISION BRUTA C*/                                               IMPCEC09 AS DESCCOME,                                  /* DESC. COMERCIAL */                                               IMPCEC03 + IMPCEC07 AS IMREPAFR,                       /* IMP. RECARGOS (PAGO FRACCIONADO Y DESC POR DOMICILIACION) */                                               IMPCEC04 AS IMDERECH,                                  /* DERECHOS */                                               IMPCEC05 AS IMIVAPRN,                                  /* IVA SOBRE PRIMA NETA */                                               IMPCEC06 AS IMIVADER,                                  /* IVA SOBRE DERECHOS */                                               IMPCEC10 AS IMGGINEX,                                  /* GASTOS DE GESTION INTERNA Y EXTERNA */                                               IMPCEC02 AS IMCESCOM,                                  /* CESION DE COMISION */                                               IMPCEC19 AS IMPRNETA,                                  /* PRIMA NETA */                                               IMPCEC20 AS IMPRITOT,                                  /* PRIMA TOTAL */                                               tsultmod,                                               'INFO' AS SISTORIG                                          FROM  bddltrn.ktom41  T                              --- MEC SEGURO DIRECTO                                          WHERE  CDCIAGRU = 'AU'                      /* CODIGO COMPANIA GRUPO */                                                AND TCTITXCT IN ('001','003')              /* TC TIPO TRANSACCION CONTABLE */                                                AND TCCOPERA IN ('004','005')  )X group by INRECIFR",,SELECT,ae44a8a1ce949ae3:d02065d700000000,ea45e81a4bdab095:6e358fa57dd055b1,,bddltrn,TABLE,,ktom41
+2019-11-21T22:36:39.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok`,   COUNT(1) AS `x__alias__0` FROM `bddldes`.`au_restec_hist` `au_restec_hist` HAVING (COUNT(1) > 0)",,SELECT,684e37aa648015c2:58f7aa0500000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:36:29.000Z,ilicealo,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,4a494393539a1d2d:a6b2271600000000,e41b46372f1452b:eb18db74d344ff98,,,,,
+2019-11-21T22:36:06.000Z,imedrano,10.67.59.12,impala,QUERY,bddlcru:ktctget,true,,,,,,,,,"select a.* from ( SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE TRIM(CDELEMEN) = '0027012253'  AND CDIDIOMA ='ES' ) a inner join ( SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE TRIM(CDELEMEN) = '0018531168'  AND CDIDIOMA ='ES' ) b on (a.CDTABLA = b.CDTABLA) inner join ( SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE TRIM(CDELEMEN) = '0010423242'  AND CDIDIOMA ='ES' ) c on (a.CDTABLA = c.CDTABLA) inner join ( SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE TRIM(CDELEMEN) = '0020420191'  AND CDIDIOMA ='ES' ) d on (a.CDTABLA = d.CDTABLA)",,SELECT,ba4466927eac3442:f0aede6100000000,ea45e81a4bdab095:6e358fa57dd055b1,,bddlcru,TABLE,,ktctget
+2019-11-21T22:35:38.000Z,ilicealo,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,114200df65df3d2f:d9d9624e00000000,e41b46372f1452b:eb18db74d344ff98,,,,,
+2019-11-21T22:35:38.000Z,ilicealo,10.67.59.12,impala,QUERY,null:null,true,,,,,,,,,GET_TABLES,,,a34c9a0fa12009f2:c4b5a07600000000,e41b46372f1452b:eb18db74d344ff98,,,,,
+2019-11-21T22:34:03.000Z,imedrano,10.67.59.12,impala,QUERY,bddltrn:ktom41,true,,,,,,,,,"select count(1),CLFILTOM from (  SELECT                                               CDNUMPOL, CTVRSPOL, CDOBJTP, CTSECOBJ,FECONTAB,FECAMBIO,CDCIAGRU,CDNUMREC, INRECIFR, INDEMIAN,NUAPUNTE,FEPROMEC,CDINTERC,TCCDMONE,FECMVTO,TCDOMORI,NUSECMVO,NUTRAB,FECTRAB,                                               CDPRODTE, CDPRODCO, CDESTRUP, CDRAMDGS, TCTINEGO, CDMEDPAG, INFISMOR, CLPROTI, CLPROUN, CDESTRUG, CLGESTI,CLGESUN,                                               CLFILTOM, CDFILPAG,TCTITXCT,CONCAT(TCTITXCT,TCCOPERA) AS CDOPERA, CDMCT, TCCOPERA,                                               IMPCEC01 AS IMPRNTEC,                                  /* PRIMA TECNICA */                                               IMPCEC18 AS IMPCOBRC,                                  /* IMPORTE COMISION BRUTA C*/                                               IMPCEC09 AS DESCCOME,                                  /* DESC. COMERCIAL */                                               IMPCEC03 + IMPCEC07 AS IMREPAFR,                       /* IMP. RECARGOS (PAGO FRACCIONADO Y DESC POR DOMICILIACION) */                                               IMPCEC04 AS IMDERECH,                                  /* DERECHOS */                                               IMPCEC05 AS IMIVAPRN,                                  /* IVA SOBRE PRIMA NETA */                                               IMPCEC06 AS IMIVADER,                                  /* IVA SOBRE DERECHOS */                                               IMPCEC10 AS IMGGINEX,                                  /* GASTOS DE GESTION INTERNA Y EXTERNA */                                               IMPCEC02 AS IMCESCOM,                                  /* CESION DE COMISION */                                               IMPCEC19 AS IMPRNETA,                                  /* PRIMA NETA */                                               IMPCEC20 AS IMPRITOT,                                  /* PRIMA TOTAL */                                               tsultmod,                                               'INFO' AS SISTORIG                                          FROM  bddltrn.ktom41  T                              --- MEC SEGURO DIRECTO                                          WHERE  CDCIAGRU = 'AU'                      /* CODIGO COMPANIA GRUPO */                                                AND TCTITXCT IN ('001','003')              /* TC TIPO TRANSACCION CONTABLE */                                                AND TCCOPERA IN ('004','005')  )X group by CLFILTOM",,SELECT,ba45342c74171dc7:d6798c3200000000,ea45e81a4bdab095:6e358fa57dd055b1,,bddltrn,TABLE,,ktom41
+2019-11-21T22:32:23.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp`,   `au_restec_hist`.`canal` AS `canal`,   SUM(`au_restec_hist`.`priemi`) AS `sum_priemi_ok` FROM `bddldes`.`au_restec_hist` `au_restec_hist` WHERE ((`au_restec_hist`.`canal` IN ('Agentes', 'Despachos y Corredores', 'Masivos')) AND ((CASE WHEN (`au_restec_hist`.`id_cluster` = 'X') THEN 'SI' ELSE 'NO' END) IN ('NO', 'SI')) AND (`au_restec_hist`.`dgrupo2` NOT IN ('TRANSPORTE DE CARGA')) AND (`au_restec_hist`.`dmes` NOT IN ('Diciembre', 'Noviembre', 'Octubre'))) GROUP BY 1,   2",,SELECT,3846b3cc1c6c74d4:87e42f3500000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:32:21.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`tipo_pro` AS `tipo_pro` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 LIMIT 48,,SELECT,7c4366303ff1d0ce:9b8a474900000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:32:20.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`dgrupo2` AS `dgrupo2` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 LIMIT 32,,SELECT,d34641bb0d29024e:a4d9018100000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:31:58.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,"SELECT (CASE WHEN ((`au_restec_hist`.`dgrupo2` = 'ADMON ESPECIAL') OR (`au_restec_hist`.`dgrupo2` = 'AUTOMOVILES') OR (`au_restec_hist`.`dgrupo2` = 'DECLARACIONES') OR (`au_restec_hist`.`dgrupo2` = 'FRONTERIZOS AUTO') OR (`au_restec_hist`.`dgrupo2` = 'MOTOCICLETAS') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS AUT') OR (`au_restec_hist`.`dgrupo2` = 'PLAN PISO') OR (`au_restec_hist`.`dgrupo2` = 'SIN DATOS') OR (`au_restec_hist`.`dgrupo2` = 'TURISTAS')) THEN 'RESIDENTES' WHEN ((`au_restec_hist`.`dgrupo2` = 'CAMIONES') OR (`au_restec_hist`.`dgrupo2` = 'P. DE PASAJEROS BUS') OR (`au_restec_hist`.`dgrupo2` = 'REMOLQUES') OR (`au_restec_hist`.`dgrupo2` = 'TRACTOCAMIONES')) THEN 'EQUIPO PESADO' ELSE 'PICK UPS' END) AS `calculation_4047047265015230472`,   SUM(`au_restec_hist`.`priemi`) AS `temp_tc___3703150471__0_`,   CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp` FROM `bddldes`.`au_restec_hist` `au_restec_hist` WHERE (`au_restec_hist`.`dmes` IN ('Abril', 'Agosto', 'Enero', 'Febrero', 'Julio', 'Junio', 'Marzo', 'Mayo', 'Septiembre')) GROUP BY 1,   3",,SELECT,a64c72ed0f3830ed:34e7054900000000,18452594f3709172:d2e8616de20b1d9f,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:31:58.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT CAST(`au_restec_hist`.`anio_comp` AS STRING) AS `anio_comp` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY CAST(`au_restec_hist`.`anio_comp` AS STRING) ASC NULLS FIRST,,SELECT,e84e14252265baa6:882ac54700000000,3c4da33efb5789c1:a265ff9b5672a68c,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:31:58.000Z,,10.67.59.12,impala,QUERY,bddldes:au_restec_hist,true,,,,,,,,,SELECT `au_restec_hist`.`dmes` AS `dmes` FROM `bddldes`.`au_restec_hist` `au_restec_hist` GROUP BY 1 ORDER BY `au_restec_hist`.`dmes` ASC NULLS FIRST,,SELECT,9f4d8d66bb6b8518:425263b900000000,af4772cbc9f24437:f4d07a42ea5d509a,,bddldes,TABLE,,au_restec_hist
+2019-11-21T22:31:56.000Z,imedrano,10.67.59.12,impala,QUERY,bddlcru:ktctget,true,,,,,,,,,"SELECT      trim(CDTABLA) as CDTABLA,     TRIM(CDELEMEN) AS CDELEMEN,     trim(DSELEMEN) as DSELEMEN     FROM  BDDLCRU.KTCTGET WHERE trim(CDTABLA) = 'XPETCBG'  AND CDIDIOMA ='ES'",,SELECT,1f42e9c45f9be260:fd02e21000000000,ea45e81a4bdab095:6e358fa57dd055b1,,bddlcru,TABLE,,ktctget
