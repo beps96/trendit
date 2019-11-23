@@ -33,7 +33,7 @@ SELECT 'bddlalm.aut_elemento_poliza_tp' tabla,
 UNION ALL
 SELECT 'bddlalm.aut_elemento_poliza_tp' tabla,
        CONCAT ('Fecha Maxima: ',
-               CAST (MAX (ts_ultima_modificacion) AS STRING)
+               CAST (MAX (tsultmod) AS STRING)
               ) cifras
   FROM bddlalm.aut_elemento_poliza_tp
 UNION ALL
@@ -45,7 +45,7 @@ SELECT 'bddlalm.aut_elemento_objeto_tp' tabla,
 UNION ALL
 SELECT 'bddlalm.aut_elemento_objeto_tp' tabla,
        CONCAT ('Fecha Maxima: ',
-               CAST (MAX (ts_ultima_modificacion) AS STRING)
+               CAST (MAX (tsultmod) AS STRING)
               ) cifras
   FROM bddlalm.aut_elemento_objeto_tp
 UNION ALL
@@ -57,7 +57,7 @@ SELECT 'bddlalm.aut_elemento_cobertura_tp' tabla,
 UNION ALL
 SELECT 'bddlalm.aut_elemento_cobertura_tp' tabla,
        CONCAT ('Fecha Maxima: ',
-               CAST (MAX (ts_ultima_modificacion) AS STRING)
+               CAST (MAX (tsultmod) AS STRING)
               ) cifras
   FROM bddlalm.aut_elemento_cobertura_tp;  
 
