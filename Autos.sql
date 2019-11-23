@@ -1,29 +1,3 @@
--- CIFRAS CONTROL PREVIOS
-SELECT 'bddlapr.aut_insumos_sb1_emision_poliza' tabla,
-       CONCAT (CAST (format_number (COUNT (1), 0) AS STRING),
-               ' Registros'
-              ) cifras
-  FROM bddlapr.aut_insumos_sb1_emision_poliza
-UNION ALL
-SELECT 'bddlapr.aut_insumos_sb1_emision_cobertura' tabla,
-       CONCAT (CAST (format_number (COUNT (1), 0) AS STRING),
-               ' Registros'
-              ) cifras
-  FROM bddlapr.aut_insumos_sb1_emision_cobertura
-UNION ALL
-SELECT 'bddlapr.aut_siniestro_poliza' tabla,
-       CONCAT (CAST (format_number (COUNT (1), 0) AS STRING),
-               ' Registros'
-              ) cifras
-  FROM bddlapr.aut_siniestro_poliza
-UNION ALL
-SELECT 'bddlapr.aut_siniestro_cob_afecta' tabla,
-       CONCAT (CAST (format_number (COUNT (1), 0) AS STRING),
-               ' Registros'
-              ) cifras
-  FROM bddlapr.aut_siniestro_cob_afecta;
-
-
 -- PASO 1 Actualizar Elementos a nivel póliza, objeto y cobertura
 SELECT 'bddlalm.aut_elemento_poliza_tp' tabla,
        CONCAT (CAST (format_number (COUNT (1), 0) AS STRING),
