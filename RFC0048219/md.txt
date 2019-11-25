@@ -1,0 +1,9 @@
+http://git.gnp.mx/DLK/GMM/blob/RFC0048219_MAGNO/Scripts_instalacion/Magno/Readme/WKF_APP_CDC_GAZ0_EXCLUSION.md
+
+http://git.gnp.mx/DLK/GMM/blob/RFC0048219_MAGNO/Scripts_instalacion/Magno/Readme/WKF_APP_CDC_GAZ0_HISPOLIZA.md
+
+http://git.gnp.mx/DLK/GMM/blob/RFC0048219_MAGNO/Scripts_instalacion/Magno/Readme/WKF_APP_CDC_GAZ0_POLIZA.md
+
+http://git.gnp.mx/DLK/GMM/blob/RFC0048219_MAGNO/Scripts_instalacion/Magno/Readme/WKF_GMM_CONTRATA_CNM_COB_ADICIONALES.md
+
+http://git.gnp.mx/DLK/GMM/blob/RFC0048219_MAGNO/Scripts_instalacion/Magno/Readme/WKF_GMM_ENDOSO.md
