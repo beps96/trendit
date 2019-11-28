@@ -15,11 +15,21 @@ set -xv
 #Definicion de Consultas
 ###########################################################################
 export TMP=/archivos-desa/AUTOS/DL_AUTOS/aut_maestra_coberturas_y_fechas_contables/tmp
-echo "<tr><th>bddlalm.aut_elemento_poliza_tp</th>" > $TMP/cc_html.txt
-hive --silent -e "SELECT CONCAT ('<th>',CAST(format_number (COUNT (1), 0) AS STRING),'</th>') FROM bddlalm.aut_elemento_poliza_tp;" > $TMP/cifras_rows.txt
+TABLAS=(bddlalm.aut_elemento_poliza_tp bddlalm.aut_elemento_objeto_tp bddlalm.aut_elemento_cobertura_tp)
+CAMPO=tsultmod
+
+touch $TMP/cc_html.txt
+cat /dev/null > $TMP/cc_html.txt
+
+
+for TABLA in ${TABLAS[@]}; do
+echo "<tr><th>$TABLA</th>" >> $TMP/cc_html.txt
+hive --silent -e "SELECT CONCAT ('<th>',CAST(format_number (COUNT (1), 0) AS STRING),'</th>') FROM $TABLA;" > $TMP/cifras_rows.txt
 awk 'NR==1' $TMP/cifras_rows.txt >> $TMP/cc_html.txt
-hive --silent -e "SELECT CONCAT ('<th>',CAST(DATE_FORMAT(MAX(tsultmod), 'YYYY-MM-d') AS STRING),'</th>') FROM bddlalm.aut_elemento_poliza_tp;" > $TMP/cifras_date.txt
+hive --silent -e "SELECT CONCAT ('<th>',CAST(DATE_FORMAT(MAX($CAMPO), 'YYYY-MM-d') AS STRING),'</th>') FROM $TABLA;" > $TMP/cifras_date.txt
 awk 'NR==1' $TMP/cifras_date.txt >> $TMP/cc_html.txt
+done
+
 
 ###########################################################################
 #Variables de ambiente para obtener parametros necesarios en la ejecucion #
@@ -43,9 +53,8 @@ export DB_BDDLTRN=bddltrn
 export T_aut_maestra_coberturas_y_fechas_contables_spark_ant=aut_maestra_coberturas_y_fechas_contables_spark_ant
 #export MAIL=arturo.ramirezhurtado@gnp.com.mx,alan.esquivelreyes@gnp.com.mx,gustavo.victoria@gnp.com.mx
 export MAIL=arturo.ramirezhurtado@gnp.com.mx
-export SUBJECT="Cifras Control DBM1"
-#export CUERPO=`awk 'NR==1' $TMP/cifras_rows.txt`
-#export CUERPO="<tr><th>100</th><th>01/01/2019</th>"
+export ELEMENTO=DBM1
+export SUBJECT="Cifras Control $ELEMENTO"
 export CUERPO=`cat $TMP/cc_html.txt`
 
 
@@ -72,6 +81,7 @@ echo "T_aut_comision_servicios_conexos"=$T_aut_comision_servicios_conexos >> ../
 echo "DB_BDDLTRN"=$DB_BDDLTRN >> ../config/job.properties
 echo "T_aut_maestra_coberturas_y_fechas_contables_spark_ant"=$T_aut_maestra_coberturas_y_fechas_contables_spark_ant >> ../config/job.properties
 echo "MAIL"=$MAIL >> ../config/job.properties
+echo "ELEMENTO"=$ELEMENTO >> ../config/job.properties
 echo "SUBJECT"=$SUBJECT >> ../config/job.properties
 echo "CUERPO"=$CUERPO >> ../config/job.properties
 }
