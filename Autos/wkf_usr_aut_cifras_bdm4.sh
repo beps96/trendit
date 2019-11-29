@@ -15,8 +15,9 @@ set -xv
 #Definicion de Consultas
 ###########################################################################
 export TMP=/archivos-desa/AUTOS/DL_AUTOS/aut_maestra_coberturas_y_fechas_contables/tmp
-TABLAS=(bddlapr.aut_siniestro_poliza bddlapr.aut_siniestro_cob_afecta)
-CAMPO=fch_contable
+export ELEMENTO=DBM4
+export TABLAS=(bddlapr.aut_siniestro_poliza bddlapr.aut_siniestro_cob_afecta)
+export CAMPO=fch_contable
 
 touch $TMP/cc_html.txt
 cat /dev/null > $TMP/cc_html.txt
@@ -41,19 +42,8 @@ export OOZIE_URL="http://10.67.53.21:11000/oozie"
 export CFG=$(cd ..; pwd)/config/
 export WSPACE="1574813752.67"
 export FECHA=$(date)
-export DB_BDDLALM=bddlalm
-export T_aut_primas=aut_primas
-export T_aut_coaseguro=aut_coaseguro
-export T_aut_comision=aut_comision
-export T_aut_servicio_conexo=aut_servicio_conexo
-export T_aut_udi=aut_udi
-export T_aut_udis_conexos=aut_udis_conexos
-export T_aut_comision_servicios_conexos=aut_comision_servicios_conexos
-export DB_BDDLTRN=bddltrn
-export T_aut_maestra_coberturas_y_fechas_contables_spark_ant=aut_maestra_coberturas_y_fechas_contables_spark_ant
 #export MAIL=arturo.ramirezhurtado@gnp.com.mx,alan.esquivelreyes@gnp.com.mx,gustavo.victoria@gnp.com.mx
 export MAIL=arturo.ramirezhurtado@gnp.com.mx
-export ELEMENTO=DBM4
 export SUBJECT="Cifras Control $ELEMENTO"
 export CUERPO=`cat $TMP/cc_html.txt`
 
@@ -70,16 +60,6 @@ echo "dryrun=False" >> ../config/job.properties
 echo "nameNode=hdfs://nameservice1" >> ../config/job.properties
 echo "jobTracker=yarnRM" >> ../config/job.properties
 echo "FECHA"=$FECHA >> ../config/job.properties
-echo "DB_BDDLALM"=$DB_BDDLALM >> ../config/job.properties
-echo "T_aut_primas"=$T_aut_primas >> ../config/job.properties
-echo "T_aut_coaseguro"=$T_aut_coaseguro >> ../config/job.properties
-echo "T_aut_comision"=$T_aut_comision >> ../config/job.properties
-echo "T_aut_servicio_conexo"=$T_aut_servicio_conexo >> ../config/job.properties
-echo "T_aut_udi"=$T_aut_udi >> ../config/job.properties
-echo "T_aut_udis_conexos"=$T_aut_udis_conexos >> ../config/job.properties
-echo "T_aut_comision_servicios_conexos"=$T_aut_comision_servicios_conexos >> ../config/job.properties
-echo "DB_BDDLTRN"=$DB_BDDLTRN >> ../config/job.properties
-echo "T_aut_maestra_coberturas_y_fechas_contables_spark_ant"=$T_aut_maestra_coberturas_y_fechas_contables_spark_ant >> ../config/job.properties
 echo "MAIL"=$MAIL >> ../config/job.properties
 echo "ELEMENTO"=$ELEMENTO >> ../config/job.properties
 echo "SUBJECT"=$SUBJECT >> ../config/job.properties
