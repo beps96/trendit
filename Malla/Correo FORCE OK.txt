@@ -1,0 +1,20 @@
+ocliente@gnp.com.mx,
+Soporte_Infra_1er_Nivel <soporte-infra-1@gnp.com.mx>,
+Datalake Admin <datalake_admin@gnp.com.mx>,
+Datalake La Banda <datalake-soporte@gnp.com.mx>
+
+
+FORCE OK
+
+Buena día
+
+Solicito su amable apoyo para darle FORCE OK al  job:
+
+PROOSGMM_GMM_CONTABILIDAD
+
+Fallo por memoria, se da rerun.
+
+
+Fallo por registros duplicados, se dio rerun.
+
+
