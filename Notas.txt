@@ -160,3 +160,8 @@ usermod -G datalake-gmm-desarrollo mamondra
 
 id mamondra
 
+<<<<<<< HEAD
+=======
+
+hdfs dfs -ls -h /user/hive/warehouse/bddlalm.db | grep 'bkp' | while IFS='\n' read LINE; do USUARIO=$(echo $LINE | awk '{ print $3 }'); GRUPO=$(echo $LINE | awk '{ print $4 }'); TABLA=$(echo $LINE | awk '{ print $8 }' | sed 's/.*\///g'); PESO=$(echo $LINE | awk '{ print $8 }' | xargs -I {} hdfs dfs -du -s -h {} | awk '{ print $1 }'); echo "tabla: $TABLA - usuario: $USUARIO - GRUPO: $GRUPO - PESO: $PESO"; done
+>>>>>>> 4fc36b9d928abae95bfe3f28f522c6fdb00c7988

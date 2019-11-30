@@ -1,0 +1,42 @@
+Datalake Admin <datalake_admin@gnp.com.mx>,
+Datalake La Banda <datalake-soporte@gnp.com.mx>
+
+Checklist fin de día
+
+
+Buenas noches.
+Comparto el estatus general de la operación al fin del día.
+
+Servicios en general
+	
+	[Imagen]
+
+
+HDFS:
+
+	[Imagen]
+
+
+Espacio libre: 214 T (38%)
+Espacio utilizado: 354 T (62%)
+Espacio total: 568 T
+
+
+YARN:
+Existen 3 procesos en ejecución 	
+
+	[Imagen 1]
+
+	[Imagen 2]	
+
+
+Impala:
+
+Hay 3 procesos en ejecución: 	
+
+
+	[Imagen]
+
+
+Quedo atento a sus comentarios.
+Saludos
