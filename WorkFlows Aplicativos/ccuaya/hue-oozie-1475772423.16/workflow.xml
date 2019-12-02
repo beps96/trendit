@@ -1,0 +1,74 @@
+<workflow-app name="Poliza" xmlns="uri:oozie:workflow:0.5">
+    <start to="fs-6c9e"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-14d2">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <mkdir path="hdfs:///consumo/aprovis/poliza"/>
+            </prepare>
+            <master>yarn-cluster</master>
+            <mode>cluster</mode>
+            <name>Poliza</name>
+              <class>PolicyData</class>
+            <jar>hdfs:///user/hue/oozie/workspaces//hue-oozie-1475105223.81/lib/</jar>
+              <spark-opts>--num-executors 10 --executor-memory 4G --executor-cores 2 --files hdfs:///entrada/hive-site.xml</spark-opts>
+              <arg>/tmp/policy/policyData</arg>
+        </spark>
+        <ok to="spark-78d9"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-78d9">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <mkdir path="hdfs:///consumo/aprovis/poliza"/>
+            </prepare>
+            <master>yarn-cluster</master>
+            <mode>cluster</mode>
+            <name>Poliza</name>
+              <class>PolicyDynamicColumns</class>
+            <jar>hdfs:///user/hue/oozie/workspaces//hue-oozie-1475105223.81/lib/</jar>
+              <spark-opts>--files hdfs:///entrada/hive-site.xml --num-executors 10 --executor-memory 4G --executor-cores 2</spark-opts>
+              <arg>hdfs:///user/ccuaya/config-files/elements.conf</arg>
+              <arg>/tmp/policy/policyDynamicColumns</arg>
+        </spark>
+        <ok to="spark-5257"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-5257">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <mkdir path="hdfs:///consumo/aprovis/poliza"/>
+            </prepare>
+            <master>yarn-cluster</master>
+            <mode>cluster</mode>
+            <name>Poliza</name>
+              <class>PolicyTranspose</class>
+            <jar>hdfs:///user/hue/oozie/workspaces//hue-oozie-1475105223.81/lib/</jar>
+              <spark-opts>--files hdfs:///entrada/hive-site.xml --num-executors 10 --executor-memory 4G --executor-cores 2</spark-opts>
+              <arg>hdfs:///user/ccuaya/config-files/elements.conf</arg>
+              <arg>/tmp/policy/policyData</arg>
+              <arg>/tmp/policy/policyDynamicColumns</arg>
+              <arg>BDDLAPR.poliza_dc1</arg>
+              <arg>poliza_dc1</arg>
+        </spark>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="fs-6c9e">
+        <fs>
+              <delete path='${nameNode}/tmp/policy/policyData.parquet'/>
+              <delete path='${nameNode}/tmp/policy/policyDynamicColumns.parquet'/>
+        </fs>
+        <ok to="spark-14d2"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>
