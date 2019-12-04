@@ -1,0 +1,1 @@
+mysql hue -e "SELECT username, first_name as Nombre, last_name as Apellido, Email, Name as Grupo, IF(is_superuser = 1, 'SI', 'NO') AS Full_Administrator FROM auth_user LEFT JOIN auth_user_groups ON auth_user.id = auth_user_groups.user_id LEFT JOIN auth_group ON auth_user_groups.group_id = auth_group.id WHERE is_superuser = 1 ORDER BY username;" | sed 's/\t/\|/g' > /tmp/rep.txt
