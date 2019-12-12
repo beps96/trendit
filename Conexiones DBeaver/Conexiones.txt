@@ -1,0 +1,15 @@
+Desarrollo
+gnpmcdes12.cloudera.des.gnp.mx
+default
+hadoop-admin
+tr3ndh4d00p
+
+Produccion
+gnpmcpro03.cloudera.pro.gnp.mx
+default
+hadoop-admin
+tr3ndh4d00p
+
+
+MySQL Desarrollo
+gnpmcdes11.cloudera.des.gnp.mx
