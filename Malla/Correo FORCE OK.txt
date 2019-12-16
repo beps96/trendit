@@ -4,7 +4,7 @@ Datalake Admin <datalake_admin@gnp.com.mx>,
 Datalake La Banda <datalake-soporte@gnp.com.mx>
 
 
-FORCE OK
+FORCE OK PROOSGMM_GMM_CONTABILIDAD
 
 Buena día
 
@@ -12,9 +12,9 @@ Solicito su amable apoyo para darle FORCE OK al  job:
 
 PROOSGMM_GMM_CONTABILIDAD
 
-Fallo por memoria, se da rerun.
+Fallo por memoria, se realizó ejecución por fuera.
 
 
-Fallo por registros duplicados, se dio rerun.
+Fallo por registros duplicados, se realizó ejecución por fuera.
 
 
