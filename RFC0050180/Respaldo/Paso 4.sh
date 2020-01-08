@@ -1,0 +1,1 @@
+hdfs dfs -mv /transf/DL_GMM/contratacion/cobertura_datos_adicionales/principal/sql/HQL_GENERA_CNM_COBERTURA_DATOS_ADICIONALES.hql /transf/DL_GMM/contratacion/cobertura_datos_adicionales/principal/sql/HQL_GENERA_CNM_COBERTURA_DATOS_ADICIONALES.hql_bkp_RFC0050180

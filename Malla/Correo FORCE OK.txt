@@ -4,17 +4,16 @@ Datalake Admin <datalake_admin@gnp.com.mx>,
 Datalake La Banda <datalake-soporte@gnp.com.mx>
 
 
-FORCE OK PROOSGMM_GMM_CONTABILIDAD
+FORCE OK PROOSGMM_CNM_SOLICITUD_PAGO
 
 Buena día
 
 Solicito su amable apoyo para darle FORCE OK al  job:
 
-PROOSGMM_GMM_CONTABILIDAD
+PROOSGMM_CNM_SOLICITUD_PAGO
 
 Fallo por memoria, se realizó ejecución por fuera.
 
 
 Fallo por registros duplicados, se realizó ejecución por fuera.
-
 

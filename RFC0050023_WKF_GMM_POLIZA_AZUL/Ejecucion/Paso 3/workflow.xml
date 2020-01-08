@@ -1,0 +1,118 @@
+<workflow-app name="WKF_GMM_POLIZA_AZUL" xmlns="uri:oozie:workflow:0.5">
+    <start to="hive2-9b09"/>
+    <kill name="Kill">
+        <message>Error al realizar la acción. Mensaje de error [${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="hive2-9b09" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_estructura.hql</script>
+        </hive2>
+        <ok to="hive2-edf6"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-b6ef" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_carga_tmp.hql</script>
+        </hive2>
+        <ok to="hive2-75da"/>
+        <error to="Kill"/>
+    </action>
+    <action name="subworkflow-dbc6">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/deployments/_jggarayg_-oozie-69684-1576779877.48</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>wkf_origen</name>
+                    <value>WKF_GMM_POLIZA_AZUL</value>
+                </property>
+                <property>
+                    <name>correos</name>
+                    <value>juan.garay@gnp.com.mx</value>
+                </property>
+                <property>
+                    <name>staging_schema</name>
+                    <value>bddltrn</value>
+                </property>
+                <property>
+                    <name>staging_table</name>
+                    <value>stg_gmm_poliza_azul_final</value>
+                </property>
+                <property>
+                    <name>final_schema</name>
+                    <value>bddlalm</value>
+                </property>
+                <property>
+                    <name>final_table</name>
+                    <value>alm_poliza_azul</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>69684</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="hive2-f60f"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-f60f" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_vw.hql</script>
+        </hive2>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-edf6" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_carga_stg_base.hql</script>
+        </hive2>
+        <ok to="hive2-b6ef"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-5995" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_carga_stg_final.hql</script>
+        </hive2>
+        <ok to="subworkflow-dbc6"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-6bf5">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>/transf/DL_GMM/hash_control_interno/shells/hci_spark_job_invoker.sh</exec>
+              <argument>jggarayg</argument>
+              <argument>bddldes.stg_gmm_pol_azul_formato_test</argument>
+            <file>/transf/DL_GMM/hash_control_interno/shells/hci_spark_job_invoker.sh#hci_spark_job_invoker.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="hive2-5995"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-75da" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_formato.hql</script>
+        </hive2>
+        <ok to="shell-6bf5"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,72 @@
+<workflow-app name="WKF_GMM_AZUL_COBERTURA" xmlns="uri:oozie:workflow:0.5">
+    <start to="fork-d9d4"/>
+    <kill name="Kill">
+        <message>Error al realizar la acción. Mensaje de error [${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="hive2-c8ce" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_GENERA_CNM_CBZA_COBERTURA_DATOS_ADICIONALES.hql</script>
+        </hive2>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-2f2e" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_TRANSPOSE_COBERTURA.hql</script>
+        </hive2>
+        <ok to="hive2-90c4"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-2d9a" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_COMPLEMENTO_CNM_COBERTURA.hql</script>
+        </hive2>
+        <ok to="hive2-c8ce"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-a4bb" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_UNION_GAZ0_POLIZA.hql</script>
+        </hive2>
+        <ok to="join-379f"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-ced6" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_UNION_GAZ0_ASEGURADO.hql</script>
+        </hive2>
+        <ok to="join-379f"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-d9d4">
+        <path start="hive2-a4bb" />
+        <path start="hive2-ced6" />
+    </fork>
+    <join name="join-379f" to="hive2-2f2e"/>
+    <action name="hive2-90c4" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_UNION_GAZ0_CAT_TIPO_UNIDAD.hql</script>
+        </hive2>
+        <ok to="hive2-2d9a"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

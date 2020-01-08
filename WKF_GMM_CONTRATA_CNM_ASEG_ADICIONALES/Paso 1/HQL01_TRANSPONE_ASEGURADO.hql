@@ -1,0 +1,96 @@
+DROP TABLE IF EXISTS BDDLTRN.STG_TMP_DATOS_ADICIONLES_ASEGURADO_TRANSPOSE;
+
+CREATE TABLE BDDLTRN.STG_TMP_DATOS_ADICIONLES_ASEGURADO_TRANSPOSE
+AS
+SELECT DISTINCT ASE_POL_NUM, ASE_POL_OFNA, POL_OFI_RENOVAC, POL_NUM_RENOVAC,  
+       ASE_NUM_CERTIF, ASE_CVE_PARIEN, ASE_PAT, ASE_MAT, ASE_NOMBRE1, ASE_NOMBRE2,
+       ASE_FEC_ALTA, ASE_FEC_BAJA, ASE_FEC_ANTIGUEDAD, ASE_FEC_ANTIG_EXT, ASE_FEC_NAC,
+       ASE_SEXO, ASE_STATUS, END_FECHA_INI, END_STATUS,END_NUM_CONSEC
+    , MAP(
+    'ASG01', CONCAT(ASE_RAMO1,'-',ASE_PLAN1,'-',ASE_PRIMA1,'-',ASE_TARIFA1), 
+    'ASG02', CONCAT(ASE_RAMO2,'-',ASE_PLAN2,'-',ASE_PRIMA2,'-',ASE_TARIFA2), 
+    'ASG03', CONCAT(ASE_RAMO3,'-',ASE_PLAN3,'-',ASE_PRIMA3,'-',ASE_TARIFA3), 
+    'ASG04', CONCAT(ASE_RAMO4,'-',ASE_PLAN4,'-',ASE_PRIMA4,'-',ASE_TARIFA4), 
+    'ASG05', CONCAT(ASE_RAMO5,'-',ASE_PLAN5,'-',ASE_PRIMA5,'-',ASE_TARIFA5), 
+    'ASG06', CONCAT(ASE_RAMO6,'-',ASE_PLAN6,'-',ASE_PRIMA6,'-',ASE_TARIFA6), 
+    'ASG07', CONCAT(ASE_RAMO7,'-',ASE_PLAN7,'-',ASE_PRIMA7,'-',ASE_TARIFA7), 
+    'ASG08', CONCAT(ASE_RAMO8,'-',ASE_PLAN8,'-',ASE_PRIMA8,'-',ASE_TARIFA8), 
+    'ASG09', CONCAT(ASE_RAMO9,'-',ASE_PLAN9,'-',ASE_PRIMA9,'-',ASE_TARIFA9), 
+    'ASG10', CONCAT(ASE_RAMO10,'-',ASE_PLAN10,'-',ASE_PRIMA10,'-',ASE_TARIFA10)) AS ASEGURADOAZUL
+  FROM BDDLCRU.GAZ0_ASEGURADO
+    where end_num_consec = 0
+UNION ALL  
+  SELECT DISTINCT ASE_POL_NUM, ASE_POL_OFNA, POL_OFI_RENOVAC, POL_NUM_RENOVAC,  
+       ASE_NUM_CERTIF, ASE_CVE_PARIEN, ASE_PAT, ASE_MAT, ASE_NOMBRE1, ASE_NOMBRE2,
+       ASE_FEC_ALTA, ASE_FEC_BAJA, ASE_FEC_ANTIGUEDAD, ASE_FEC_ANTIG_EXT, ASE_FEC_NAC,
+       ASE_SEXO, ASE_STATUS, END_FECHA_INI, END_STATUS,END_NUM_CONSEC
+    , MAP(
+    'ASG01', CONCAT(ASE_RAMO1,'-',ASE_PLAN1,'-',ASE_PRIMA1,'-',ASE_TARIFA1), 
+    'ASG02', CONCAT(ASE_RAMO2,'-',ASE_PLAN2,'-',ASE_PRIMA2,'-',ASE_TARIFA2), 
+    'ASG03', CONCAT(ASE_RAMO3,'-',ASE_PLAN3,'-',ASE_PRIMA3,'-',ASE_TARIFA3), 
+    'ASG04', CONCAT(ASE_RAMO4,'-',ASE_PLAN4,'-',ASE_PRIMA4,'-',ASE_TARIFA4), 
+    'ASG05', CONCAT(ASE_RAMO5,'-',ASE_PLAN5,'-',ASE_PRIMA5,'-',ASE_TARIFA5), 
+    'ASG06', CONCAT(ASE_RAMO6,'-',ASE_PLAN6,'-',ASE_PRIMA6,'-',ASE_TARIFA6), 
+    'ASG07', CONCAT(ASE_RAMO7,'-',ASE_PLAN7,'-',ASE_PRIMA7,'-',ASE_TARIFA7), 
+    'ASG08', CONCAT(ASE_RAMO8,'-',ASE_PLAN8,'-',ASE_PRIMA8,'-',ASE_TARIFA8), 
+    'ASG09', CONCAT(ASE_RAMO9,'-',ASE_PLAN9,'-',ASE_PRIMA9,'-',ASE_TARIFA9), 
+    'ASG10', CONCAT(ASE_RAMO10,'-',ASE_PLAN10,'-',ASE_PRIMA10,'-',ASE_TARIFA10)) AS ASEGURADOAZUL
+  FROM BDDLCRU.GAZ0_HIS_ASEGURADO
+  where end_num_consec = 0;
+  
+  
+ DROP TABLE IF EXISTS BDDLTRN.STG_TMP_DATOS_ADICIONLES_ASEGURADO_TRANSPOSE_MAP;
+
+CREATE TABLE IF NOT EXISTS BDDLTRN.STG_TMP_DATOS_ADICIONLES_ASEGURADO_TRANSPOSE_MAP AS
+SELECT ASE_POL_NUM, ASE_POL_OFNA, POL_OFI_RENOVAC, POL_NUM_RENOVAC,  
+       ASE_NUM_CERTIF, ASE_CVE_PARIEN, ASE_PAT, ASE_MAT, ASE_NOMBRE1, ASE_NOMBRE2,
+       ASE_FEC_ALTA, ASE_FEC_BAJA, ASE_FEC_ANTIGUEDAD, ASE_FEC_ANTIG_EXT, ASE_FEC_NAC,
+       ASE_SEXO, ASE_STATUS, END_FECHA_INI, END_STATUS,END_NUM_CONSEC,NUM_ASEGURADO, SPLIT(ASEGURADO,'-') AS ASEGURADOMAP
+FROM  BDDLTRN.STG_TMP_DATOS_ADICIONLES_ASEGURADO_TRANSPOSE
+LATERAL VIEW EXPLODE(ASEGURADOAZUL) EXPLODE_TABLE AS NUM_ASEGURADO, ASEGURADO;
+
+
+ DROP TABLE IF EXISTS  BDDLTRN.STG_CNM_TRANSPOSE_DATOS_ADICIONALES_ASEGURADO;
+ 
+CREATE TABLE IF NOT EXISTS BDDLTRN.STG_CNM_TRANSPOSE_DATOS_ADICIONALES_ASEGURADO_MP AS
+SELECT * FROM(
+            SELECT ASE_POL_NUM, ASE_POL_OFNA, POL_OFI_RENOVAC, POL_NUM_RENOVAC,  
+                   ASE_NUM_CERTIF, ASE_CVE_PARIEN, ASE_PAT, ASE_MAT, ASE_NOMBRE1, ASE_NOMBRE2,
+                   ASE_FEC_ALTA, ASE_FEC_BAJA, ASE_FEC_ANTIGUEDAD, ASE_FEC_ANTIG_EXT, ASE_FEC_NAC,
+                   ASE_SEXO, ASE_STATUS, END_FECHA_INI, END_STATUS,END_NUM_CONSEC,
+                            ASEGURADOMAP[0] AS POL_RAMO,
+                            ASEGURADOMAP[1] AS POL_PLAN,
+                            ASEGURADOMAP[2] AS POL_PRIMA,
+                            ASEGURADOMAP[3] AS POL_TARIFA
+            FROM  BDDLTRN.STG_TMP_DATOS_ADICIONLES_ASEGURADO_TRANSPOSE_MAP 
+        ) AS TMP; 
+
+ DROP TABLE IF EXISTS  BDDLTRN.STG_CNM_TRANSPOSE_DATOS_ADICIONALES_ASEGURADO;
+
+CREATE TABLE IF NOT EXISTS BDDLTRN.STG_CNM_TRANSPOSE_DATOS_ADICIONALES_ASEGURADO AS
+Select trans.*
+        ,perfact.rfc_cve_801 AS RFC
+        ,ased.adi_codigo_postal as CODIGO_POSTAL
+       -- ,ased.fec_ini_vig - ased.fec_nac as EDAD_EQUIVALENTE
+        --, case when UPPER(trans.ASE_SEXO) in ('F','M') then cat_hom.cve_atributo_org else ''  END as CVE_SEXO        
+        ,if(cat_hom.cve_hom is null or trim(cat_hom.cve_hom) = ''  ,'' ,cat_hom.cve_hom) as CVE_SEXO
+        --, case when UPPER(trans.ASE_SEXO) in ('F','M') then cat_hom.des_atributo_org else ''  END  as DES_SEXO
+         ,if(cat_hom.descripcion is null or trim(cat_hom.descripcion) = '' ,'Sin descripcion' ,cat_hom.descripcion)  AS DES_SEXO, ased.adi_ant_ext_otracia as FCH_ANTIGUEDAD_INT_OT_CIA,ased.adi_ant_nac_otracia  as FCH_ANTIGUEDAD_NAC_OT_CIA
+from BDDLTRN.STG_CNM_TRANSPOSE_DATOS_ADICIONALES_ASEGURADO_MP trans -- 630156200
+    LEFT JOIN 
+     bddlcru.gaz0_perfact_801  as perfact
+      on trans.pol_ofi_renovac = perfact.ofi_renovac_801 and
+         trans.pol_num_renovac = perfact.num_renovac_801 and
+         trim(trans.ase_num_certif)  = trim(perfact.num_certif_801)
+    LEFT JOIN bddlcru.gaz0_asegadic as ased  -- 666114280                           
+               on   --trans.ase_pol_ofna = ased.adi_pol_ofna and
+                     trans.POL_OFI_RENOVAC = ased.adi_pol_ofna and
+                    --trans.ase_pol_num = ased.adi_pol_num and 
+                      trans.pol_num_renovac = ased.adi_pol_num and 
+                    trim(trans.ase_num_certif) = trim(ased.adi_num_certif) and
+                    trim(trans.ase_cve_parien) = trim(ased.adi_cve_parien)     
+    LEFT JOIN ( select cve_hom,descripcion 
+                from  bddlcru.cat_hom_509_gen_sex_aseg 
+               ) as cat_hom
+              on cat_hom.cve_hom =  trans.ASE_SEXO;
+

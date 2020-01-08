@@ -1,0 +1,75 @@
+[
+{
+  "pk": 103152, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "92a0c890-8c89-4786-9385-6b11434879df", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "Generaci\u00f3n de cnm_coberturao_datos_adicionales paa info gmm", 
+    "is_history": false, 
+    "parent_directory": [
+      "45f87f3b-7090-4706-8744-8633ea98c40b", 
+      1, 
+      false
+    ], 
+    "is_managed": false, 
+    "last_modified": "2019-11-22T17:18:22", 
+    "version": 1, 
+    "owner": [
+      "amendoza"
+    ], 
+    "dependencies": [
+      [
+        "be11fad2-ff2e-4ac1-98a3-9a4ae1988baf", 
+        1, 
+        true
+      ], 
+      [
+        "e2673283-126d-49fc-aaff-b86d3bc20558", 
+        1, 
+        true
+      ], 
+      [
+        "68cc587a-a97e-4aca-846b-dd9e4a90eb7b", 
+        1, 
+        true
+      ], 
+      [
+        "e7581ff3-59ba-4e7f-84d6-229375a79f70", 
+        1, 
+        true
+      ], 
+      [
+        "5fa43749-1837-4468-a451-6f4bc604e271", 
+        1, 
+        true
+      ], 
+      [
+        "e6ac22f9-ec52-4d9f-b084-9d0077e6cc96", 
+        1, 
+        true
+      ], 
+      [
+        "88c7a6e1-f952-44f4-923e-e93d1673e7bc", 
+        1, 
+        true
+      ], 
+      [
+        "266a6755-11bd-4bfb-8d9a-4e3254097a4f", 
+        1, 
+        true
+      ], 
+      [
+        "e3ffee06-8e03-42ee-a500-fd5e05a3c1e5", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Hv_filtro_bddlcru\", \"widgetType\": \"hive2-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"d95a16e2-ad40-61fc-e4d1-5c737926d06a\", \"size\": 12}], \"id\": \"d9ff87f9-280a-670d-e29e-96689b5a6533\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"hv_genera_cnm_cobertura_info\", \"widgetType\": \"hive2-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c8ce4fbb-42ed-ee51-d663-487cee5377cc\", \"size\": 12}], \"id\": \"e89db5c9-a9a7-26ed-1377-ae392076f9fd\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"3233bdef-bfa1-87c2-f3c8-ed324ec28a67\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Hv_filtro_bddlcru\", \"widgetType\": \"hive2-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"d95a16e2-ad40-61fc-e4d1-5c737926d06a\", \"size\": 12}], \"id\": \"d9ff87f9-280a-670d-e29e-96689b5a6533\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"hv_genera_cnm_cobertura_info\", \"widgetType\": \"hive2-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c8ce4fbb-42ed-ee51-d663-487cee5377cc\", \"size\": 12}], \"id\": \"e89db5c9-a9a7-26ed-1377-ae392076f9fd\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"cde84029-f5e6-2aee-c4a5-5a62794dbbfc\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"1e172d9b-e748-9777-fffe-53bbd59b8163\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"cde84029-f5e6-2aee-c4a5-5a62794dbbfc\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"1e172d9b-e748-9777-fffe-53bbd59b8163\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"gridsterHeight\": 0, \"externalJobId\": \"\", \"properties\": {}, \"externalId\": \"\", \"isLoading\": false, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"externalIdUrl\": \"\", \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"3233bdef-bfa1-87c2-f3c8-ed324ec28a67\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"67de7c14-3c3b-8767-5426-b196ed6ed570\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"Generaci\\u00f3n de cnm_coberturao_datos_adicionales paa info gmm\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}], \"sla_enabled\": false, \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1573590861.09\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"show_arrows\": true, \"wf1_id\": null, \"properties\": []}, \"name\": \"WKF_GMM_INFO_COBERTURA\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": false, \"movedNode\": null, \"linkMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"d95a16e2-ad40-61fc-e4d1-5c737926d06a\": [\"c8ce4fbb-42ed-ee51-d663-487cee5377cc\"], \"c8ce4fbb-42ed-ee51-d663-487cee5377cc\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"d95a16e2-ad40-61fc-e4d1-5c737926d06a\"]}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"c8ce4fbb-42ed-ee51-d663-487cee5377cc\", \"d95a16e2-ad40-61fc-e4d1-5c737926d06a\"], \"nodes\": [{\"name\": \"Start\", \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"d95a16e2-ad40-61fc-e4d1-5c737926d06a\"}], \"actionParametersFetched\": false, \"properties\": {}, \"associatedDocumentUuid\": null, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"name\": \"End\", \"associatedDocumentLoading\": true, \"children\": [], \"actionParametersFetched\": false, \"properties\": {\"body\": \"\", \"cc\": \"\", \"to\": \"\", \"enableMail\": false, \"attachment\": \"\", \"content_type\": \"text/plain\", \"subject\": \"\"}, \"associatedDocumentUuid\": null, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"name\": \"Kill\", \"associatedDocumentLoading\": true, \"children\": [], \"actionParametersFetched\": false, \"properties\": {\"body\": \"\", \"cc\": \"\", \"to\": \"\", \"enableMail\": false, \"message\": \"Error al realizar la acci\\u00f3n. Mensaje de error [${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"\"}, \"associatedDocumentUuid\": null, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"name\": \"hive2-c8ce\", \"actionParametersUI\": [], \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"id\": \"c8ce4fbb-42ed-ee51-d663-487cee5377cc\", \"associatedDocumentUuid\": null, \"type\": \"hive2-widget\", \"properties\": {\"files\": [], \"job_xml\": \"\", \"parameters\": [], \"retry_interval\": [], \"retry_max\": [], \"job_properties\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"archives\": [], \"prepares\": [], \"credentials\": [\"hive2\"], \"script_path\": \"/user/amendoza/transf/DL_GMM/contratacion/cobertura_datos_adicionales/INFO/sql/HQL_GENERA_CNM_INFO_COBER_DATOS_ADICIONALES.hql\", \"password\": \"\", \"jdbc_url\": \"\", \"arguments\": []}, \"actionParameters\": []}, {\"name\": \"hive2-d95a\", \"actionParametersUI\": [], \"associatedDocumentLoading\": true, \"children\": [{\"to\": \"c8ce4fbb-42ed-ee51-d663-487cee5377cc\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"id\": \"d95a16e2-ad40-61fc-e4d1-5c737926d06a\", \"associatedDocumentUuid\": null, \"type\": \"hive2-widget\", \"properties\": {\"files\": [], \"job_xml\": \"\", \"parameters\": [], \"retry_interval\": [], \"retry_max\": [], \"job_properties\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"archives\": [], \"prepares\": [], \"credentials\": [\"hive2\"], \"script_path\": \"/user/amendoza/transf/DL_GMM/contratacion/cobertura_datos_adicionales/INFO/sql/HQL_COMPLEMENTO_CNM_COBERTURA.hql\", \"password\": \"\", \"jdbc_url\": \"\", \"arguments\": []}, \"actionParameters\": []}], \"id\": 103152, \"nodeNamesMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"d95a16e2-ad40-61fc-e4d1-5c737926d06a\": \"hive2-d95a\", \"c8ce4fbb-42ed-ee51-d663-487cee5377cc\": \"hive2-c8ce\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\"}, \"uuid\": \"340815dc-c543-4fd3-7dc0-546184d353b7\"}}", 
+    "is_trashed": false, 
+    "name": "WKF_GMM_INFO_COBERTURA"
+  }
+}
+]

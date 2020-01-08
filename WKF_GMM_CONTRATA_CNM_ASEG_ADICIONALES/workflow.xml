@@ -1,0 +1,139 @@
+<workflow-app name="WKF_GMM_CONTRATA_CNM_ASEG_ADICIONALES_DE" xmlns="uri:oozie:workflow:0.5">
+    <start to="fork-1d7e"/>
+    <kill name="Kill">
+        <message>Error al realizar la acción. Mensaje de error [${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="subworkflow-9160">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/workspaces/hue-oozie-1566507308.64</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>106353</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="join-3989"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-30cf" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/user/mamondra/transf/DL_GMM/contratacion/asegurado_datos_adicionales/principal/sql/HQL_GENERA_CNM_ASEGURADO_DATOS_ADICIONALES.hql</script>
+            <file>/transf/DL_GMM/contratacion/asegurado_datos_adicionales/principal/sql/HQL_GENERA_CNM_ASEGURADO_DATOS_ADICIONALES.hql#HQL_GENERA_CNM_ASEGURADO_DATOS_ADICIONALES.hql</file>
+        </hive2>
+        <ok to="shell-8c53"/>
+        <error to="Kill"/>
+    </action>
+    <action name="subworkflow-6c53">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/deployments/_mamondra_-oozie-7026-1576782178.18</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>tablaApr</name>
+                    <value>BDDLAPR.CNM_ASEGURADO_DATOS_ADICIONALES</value>
+                </property>
+                <property>
+                    <name>ruta</name>
+                    <value>/transf/DL_GMM/contratacion/asegurado_datos_adicionales/principal/sql</value>
+                </property>
+                <property>
+                    <name>archivoHQL</name>
+                    <value>HQL_GMM_GENERA_CIFRAS_CONTROL.hql</value>
+                </property>
+                <property>
+                    <name>tablaAlm</name>
+                    <value>BDDLAPR.CNM_ASEGURADO_DATOS_ADICIONALES</value>
+                </property>
+                <property>
+                    <name>concepto</name>
+                    <value>Datos Adicionales del Asegurado</value>
+                </property>
+                <property>
+                    <name>destinatarios</name>
+                    <value>miguel.aguilarmondragon@gnp.com.mx</value>
+                </property>
+                <property>
+                    <name>tmpImpala</name>
+                    <value>gmmcontr</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>7026</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="subworkflow-ce65">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/workspaces/hue-oozie-1571420265.02</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>80126</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="join-3989"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-1d7e">
+        <path start="subworkflow-9160" />
+        <path start="subworkflow-ce65" />
+    </fork>
+    <join name="join-3989" to="hive2-30cf"/>
+    <action name="subworkflow-7b48">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/deployments/_mamondra_-oozie-30152-1576782179.79</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>schema</name>
+                    <value>BDDLAPR</value>
+                </property>
+                <property>
+                    <name>tabla</name>
+                    <value>CNM_ASEGURADO_DATOS_ADICIONALES</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>30152</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="subworkflow-6c53"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-5d00" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/user/mamondra/transf/DL_GMM/contratacion/asegurado_datos_adicionales/principal/sql/HQL_CNM_ASEGURADO_DATOS_ADICIONALES.hql</script>
+            <file>/transf/DL_GMM/contratacion/asegurado_datos_adicionales/principal/sql/HQL_CNM_ASEGURADO_DATOS_ADICIONALES.hql#HQL_CNM_ASEGURADO_DATOS_ADICIONALES.hql</file>
+        </hive2>
+        <ok to="subworkflow-7b48"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-8c53">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>/transf/DL_GMM/hash_control_interno/shells/hci_spark_job_invoker.sh</exec>
+              <argument>mamondra</argument>
+              <argument>BDDLTRN.STG_ASEGURADO_DATOS_ADICIONALES</argument>
+            <file>/transf/DL_GMM/hash_control_interno/shells/hci_spark_job_invoker.sh#hci_spark_job_invoker.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="hive2-5d00"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

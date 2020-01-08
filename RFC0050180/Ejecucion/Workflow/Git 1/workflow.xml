@@ -1,0 +1,27 @@
+<workflow-app name="WKF_GMM_INFO_COBERTURA" xmlns="uri:oozie:workflow:0.5">
+    <start to="hive2-d95a"/>
+    <kill name="Kill">
+        <message>Error al realizar la acción. Mensaje de error [${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="hive2-c8ce" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/INFO/sql/HQL_GENERA_CNM_INFO_COBER_DATOS_ADICIONALES.hql</script>
+        </hive2>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-d95a" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/INFO/sql/HQL_COMPLEMENTO_CNM_COBERTURA.hql</script>
+        </hive2>
+        <ok to="hive2-c8ce"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,95 @@
+<workflow-app name="WKF_GMM_PADECIMIENTO_DECLARADO" xmlns="uri:oozie:workflow:0.5">
+    <start to="hive2-b730"/>
+    <kill name="Kill">
+        <message>Error al realizar la acción. Mensaje de error [${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="hive2-b730" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcpro03.cloudera.pro.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/padecimiento_declarado/principal/config/HQL_GMM_CON_PADECIMIENTO_DECLARADO_ESTRUCTURAS.hql</script>
+        </hive2>
+        <ok to="hive2-f4b7"/>	
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-f4b7" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcpro03.cloudera.pro.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/padecimiento_declarado/principal/sql/HQL_GMM_CON_ALM_PADECIMIENTO_DECLARADO_DELTA_EXTRACCION.hql</script>
+        </hive2>
+        <ok to="hive2-7100"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-7100" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcpro03.cloudera.pro.gnp.mx:10000/default</jdbc-url>
+			<script>/transf/DL_GMM/contratacion/padecimiento_declarado/principal/sql/HQL_GMM_CON_ALM_PADECIMIENTO_DECLARADO_DELTA_RELLENO.hql</script>
+        </hive2>
+        <ok to="hive2-71fb"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-71fb" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcpro03.cloudera.pro.gnp.mx:10000/default</jdbc-url>
+			<script>/transf/DL_GMM/contratacion/padecimiento_declarado/principal/sql/HQL_GMM_CON_ALM_PADECIMIENTO_DECLARADO_DELTA.hql</script>
+        </hive2>
+        <ok to="subworkflow-e041"/>
+        <error to="Kill"/>
+    </action>	
+    <action name="subworkflow-e041">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/workspaces/hue-oozie-1556910076.62</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>wkf_origen</name>
+                    <value>WKF_GMM_PADECIMIENTO_DECLARADO</value>
+                </property>
+                <property>
+                    <name>correos</name>
+                    <value>luis.tejas@gnp.com.mx,miriam.hmorales@gnp.com.mx,cesar.reyes@gnp.com.mx</value>
+                </property>
+                <property>
+                    <name>staging_schema</name>
+                    <value>BDDLTRN</value>
+                </property>
+                <property>
+                    <name>staging_table</name>
+                    <value>stg_gmm_con_padecimiento_declarado_delta</value>
+                </property>
+                <property>
+                    <name>final_schema</name>
+                    <value>BDDLALM</value>
+                </property>
+                <property>
+                    <name>final_table</name>
+                    <value>ALM_PADECIMIENTO_DECLARADO</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>618657</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="hive2-b240"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-b240" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcpro03.cloudera.pro.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/padecimiento_declarado/principal/config/HQL_GMM_CON_CNM_PADECIMIENTO_DECLARADO.hql</script>
+        </hive2>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

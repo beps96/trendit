@@ -1,0 +1,92 @@
+<workflow-app name="WKF_GMM_CONTRATA_CNM_COB_ADICIONALES" xmlns="uri:oozie:workflow:0.5">
+    <start to="fork-1d7e"/>
+    <kill name="Kill">
+        <message>Error al realizar la acción. Mensaje de error [${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="subworkflow-9160">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/workspaces/hue-oozie-1543860198.44</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>69566</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="join-3989"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-30cf" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/principal/sql/HQL_GENERA_CNM_COBERTURA_DATOS_ADICIONALES.hql</script>
+        </hive2>
+        <ok to="subworkflow-6c53"/>
+        <error to="Kill"/>
+    </action>
+    <action name="subworkflow-6c53">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/deployments/_htello_-oozie-7026-1571920981.02</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>tablaApr</name>
+                    <value>BDDLAPR.CNM_COBERTURA_DATOS_ADICIONALES</value>
+                </property>
+                <property>
+                    <name>ruta</name>
+                    <value>/transf/DL_GMM/contratacion/cobertura_datos_adicionales/principal/sql</value>
+                </property>
+                <property>
+                    <name>archivoHQL</name>
+                    <value>HQL_GMM_GENERA_CIFRAS_CONTROL.hql</value>
+                </property>
+                <property>
+                    <name>tablaAlm</name>
+                    <value>BDDLAPR.CNM_COBERTURA_DATOS_ADICIONALES</value>
+                </property>
+                <property>
+                    <name>concepto</name>
+                    <value>Datos Adicionales de la Cobertura</value>
+                </property>
+                <property>
+                    <name>destinatarios</name>
+                    <value>mariaberenice.patino@gnp.com.mx, mateo.aguilar@gnp.com.mx, carloseduardo.hernandez@gnp.com.mx, alejandra.arenas@gnp.com.mx, maricarmen.aguero@gnp.com.mx, hoham.tello@gnp.com.mx, rommel.uriel@gnp.com.mx, hector.aguilar@gnp.com.mx, luis.tejas@gnp.com.mx </value>
+                </property>
+                <property>
+                    <name>tmpImpala</name>
+                    <value>gmmcontr</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>7026</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="subworkflow-ce65">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/workspaces/hue-oozie-1543859197.58</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>69565</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="join-3989"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-1d7e">
+        <path start="subworkflow-9160" />
+        <path start="subworkflow-ce65" />
+    </fork>
+    <join name="join-3989" to="hive2-30cf"/>
+    <end name="End"/>
+</workflow-app>

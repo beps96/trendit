@@ -1,0 +1,1 @@
+hdfs dfs -cp /user/hue/oozie/workspaces/hue-oozie-1552665216.64 /user/hue/oozie/workspaces/hue-oozie-1552665216.64_bkp

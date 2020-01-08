@@ -1,0 +1,133 @@
+<workflow-app name="WKF_GMM_CONTRATA_CNM_POLIZA_ADICIONALES" xmlns="uri:oozie:workflow:0.5">
+    <start to="hive2-1880"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="hive2-1880" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/poliza_datos_adicionales/INFO/config/STG_GMM_ALM_POLIZA_DATOS_ADICIONALES_ESTRUCTURAS.hql</script>
+            <file>/transf/DL_GMM/contratacion/poliza_datos_adicionales/INFO/config/STG_GMM_ALM_POLIZA_DATOS_ADICIONALES_ESTRUCTURAS.hql#STG_GMM_ALM_POLIZA_DATOS_ADICIONALES_ESTRUCTURAS.hql</file>
+        </hive2>
+        <ok to="hive2-0acb"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-0acb" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/poliza_datos_adicionales/INFO/sql/STG_ALM_POLIZA_DATOS_ADICIONALES_EXTRACCION.hql</script>
+            <file>/transf/DL_GMM/contratacion/poliza_datos_adicionales/INFO/sql/STG_ALM_POLIZA_DATOS_ADICIONALES_EXTRACCION.hql#STG_ALM_POLIZA_DATOS_ADICIONALES_EXTRACCION.hql</file>
+        </hive2>
+        <ok to="shell-2bc3"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-87fb" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/contratacion/poliza_datos_adicionales/principal/sql/CNM_POLIZA_DATOS_ADICIONALES.hql</script>
+            <file>/transf/DL_GMM/contratacion/poliza_datos_adicionales/principal/sql/CNM_POLIZA_DATOS_ADICIONALES.hql#CNM_POLIZA_DATOS_ADICIONALES.hql</file>
+        </hive2>
+        <ok to="subworkflow-c8aa"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-2bc3">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>/transf/DL_GMM/hash_control_interno/shells/hci_spark_job_invoker.sh</exec>
+              <argument>usrsup</argument>
+              <argument>bddltrn.stg_alm_poliza_datos_adicionales_delta</argument>
+            <file>/transf/DL_GMM/hash_control_interno/shells/hci_spark_job_invoker.sh#hci_spark_job_invoker.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="subworkflow-7a77"/>
+        <error to="Kill"/>
+    </action>
+    <action name="subworkflow-7a77">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/deployments/_lttejast_-oozie-69684-1576714426.73</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>wkf_origen</name>
+                    <value>WKF_GMM_CONTRATA_CNM_POLIZA_ADICIONALES</value>
+                </property>
+                <property>
+                    <name>correos</name>
+                    <value>desarrollo-gmm-datalake-sistemas@gnp.com.mx</value>
+                </property>
+                <property>
+                    <name>staging_schema</name>
+                    <value>BDDLTRN</value>
+                </property>
+                <property>
+                    <name>staging_table</name>
+                    <value>STG_POLIZA_DATOS_ADICIONALES_HASH</value>
+                </property>
+                <property>
+                    <name>final_schema</name>
+                    <value>BDDLALM</value>
+                </property>
+                <property>
+                    <name>final_table</name>
+                    <value>ALM_POLIZA_DATOS_ADICIONALES</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>69684</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="hive2-87fb"/>
+        <error to="Kill"/>
+    </action>
+    <action name="subworkflow-c8aa">
+        <sub-workflow>
+            <app-path>${nameNode}/user/hue/oozie/deployments/_lttejast_-oozie-7026-1576714428.79</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>tablaApr</name>
+                    <value>BDDLAPR.CNM_POLIZA_DATOS_ADICIONALES</value>
+                </property>
+                <property>
+                    <name>ruta</name>
+                    <value>/transf/DL_GMM/contratacion/poliza_datos_adicionales/principal/sql</value>
+                </property>
+                <property>
+                    <name>archivoHQL</name>
+                    <value>HQL_GMM_GENERA_CIFRAS_CONTROL.hql</value>
+                </property>
+                <property>
+                    <name>tablaAlm</name>
+                    <value>BDDLAPR.CNM_POLIZA_DATOS_ADICIONALES</value>
+                </property>
+                <property>
+                    <name>concepto</name>
+                    <value>Datos Adicionales de la Póliza</value>
+                </property>
+                <property>
+                    <name>destinatarios</name>
+                    <value>mariaberenice.patino@gnp.com.mx, mateo.aguilar@gnp.com.mx, carloseduardo.hernandez@gnp.com.mx, alejandra.arenas@gnp.com.mx, maricarmen.aguero@gnp.com.mx, hoham.tello@gnp.com.mx, rommel.uriel@gnp.com.mx, hector.aguilar@gnp.com.mx</value>
+                </property>
+                <property>
+                    <name>tmpImpala</name>
+                    <value>gmmcontr</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>7026</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>
