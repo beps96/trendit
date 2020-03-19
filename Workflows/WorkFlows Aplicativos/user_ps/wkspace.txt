@@ -1,0 +1,1 @@
+drwxr-xr-x   - user_ps      hue          0 2019-07-05 14:59 /user/hue/oozie/workspaces/hue-oozie-1562354028.29

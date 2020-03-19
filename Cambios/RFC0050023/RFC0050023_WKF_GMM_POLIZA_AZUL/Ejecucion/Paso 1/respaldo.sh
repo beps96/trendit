@@ -1,0 +1,4 @@
+hdfs dfs -mv /transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_carga_stg_final.hql /transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_carga_stg_final.hqlRFC0050023
+hdfs dfs -mv /transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_carga_tmp.hql /transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_carga_tmp.hqlRFC0050023
+hdfs dfs -mv /transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_formato.hql /transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_formato.hqlRFC0050023
+hdfs dfs -mv /transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_vw.hql /transf/DL_GMM/contratacion/poliza_azul/principal/sql/hql_poliza_azul_vw.hqlRFC0050023

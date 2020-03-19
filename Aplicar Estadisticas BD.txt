@@ -1,8 +1,0 @@
-Hive:
-
-Analize Table BD.TABLA compute statistics;
-
-
-Impala:
-
-Compute Stats BD.TABLA;

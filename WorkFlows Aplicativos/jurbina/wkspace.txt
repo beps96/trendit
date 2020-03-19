@@ -1,6 +1,0 @@
-drwxrwxrwx   - jurbina      hue          0 2016-09-30 16:37 /user/hue/oozie/workspaces/hue-oozie-1475257549.22
-drwxrwxrwx   - jurbina      hue          0 2016-10-05 09:27 /user/hue/oozie/workspaces/hue-oozie-1475677677.78
-drwxrwxrwx   - jurbina      hue          0 2016-10-05 10:50 /user/hue/oozie/workspaces/hue-oozie-1475682658.61
-drwxr-xr-x   - jurbina      hue          0 2018-01-29 15:04 /user/hue/oozie/workspaces/hue-oozie-1517259364.73
-drwxr-xr-x   - jurbina      hue          0 2018-01-29 15:02 /user/hue/oozie/workspaces/hue-oozie-1517259736.33
-drwxr-xr-x   - jurbina      hue          0 2018-01-29 15:02 /user/hue/oozie/workspaces/hue-oozie-1517259765.11

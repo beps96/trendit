@@ -1,0 +1,4 @@
+drwxr-xr-x   - sasgmmopr    hue          0 2018-09-24 17:42 /user/hue/oozie/workspaces/hue-oozie-1537828977.35
+drwxr-xr-x   - sasgmmopr    hue          0 2019-01-08 18:22 /user/hue/oozie/workspaces/hue-oozie-1537829010.91
+drwxr-xr-x   - sasgmmopr    hue          0 2019-01-08 18:22 /user/hue/oozie/workspaces/hue-oozie-1537829105.32
+drwxr-xr-x   - sasgmmopr    hue          0 2019-01-08 18:22 /user/hue/oozie/workspaces/hue-oozie-1537829112.61

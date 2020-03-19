@@ -1,6 +1,0 @@
-hdfs dfs -mv /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_COMPLEMENTO_CNM_COBERTURA.hql /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_COMPLEMENTO_CNM_COBERTURA.hql_bkp_RFC0050180
-hdfs dfs -mv /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_GENERA_CNM_CBZA_COBERTURA_DATOS_ADICIONALES.hql /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_GENERA_CNM_CBZA_COBERTURA_DATOS_ADICIONALES.hql_bkp_RFC0050180
-hdfs dfs -mv /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_TRANSPOSE_COBERTURA.hql /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_TRANSPOSE_COBERTURA.hql_bkp_RFC0050180
-hdfs dfs -mv /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_UNION_GAZ0_ASEGURADO.hql /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_UNION_GAZ0_ASEGURADO.hql_bkp_RFC0050180
-hdfs dfs -mv /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_UNION_GAZ0_CAT_TIPO_UNIDAD.hql /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_UNION_GAZ0_CAT_TIPO_UNIDAD.hql_bkp_RFC0050180
-hdfs dfs -mv /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_UNION_GAZ0_POLIZA.hql /transf/DL_GMM/contratacion/cobertura_datos_adicionales/CBZA/sql/HQL_UNION_GAZ0_POLIZA.hql_bkp_RFC0050180

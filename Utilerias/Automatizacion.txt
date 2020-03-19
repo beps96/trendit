@@ -1,0 +1,22 @@
+
+
+De N entradas a una salida de Excel
+
+El Excel a sacar reportes en la nube
+
+ 
+ Numero Economico - Foliador
+ Identificador adicional (# Radio) - Eliminar
+
+ Responsiva en PDF
+ Mantenimiento Autos
+ Nivel de Servicio (Mantenimiento Autos)
+
+ 
+ Realizar Diagrama de Arquitectura
+ La primer pestaña se consume las pestañas de la derecha
+
+ Historial del auto (ciclo de vida) en una celda en especifico
+ 
+
+

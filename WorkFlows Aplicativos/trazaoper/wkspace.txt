@@ -1,8 +1,0 @@
-drwxr-xr-x   - trazaoper    hue          0 2018-05-14 12:08 /user/hue/oozie/workspaces/hue-oozie-1526317329.04
-drwxr-xr-x   - trazaoper    hue          0 2019-07-18 10:57 /user/hue/oozie/workspaces/hue-oozie-1563463731.83
-drwxr-xr-x   - trazaoper    hue          0 2019-07-18 10:41 /user/hue/oozie/workspaces/hue-oozie-1563463732.49
-drwxr-xr-x   - trazaoper    hue          0 2019-07-18 10:53 /user/hue/oozie/workspaces/hue-oozie-1563465185.78
-drwxr-xr-x   - trazaoper    hue          0 2019-07-18 10:53 /user/hue/oozie/workspaces/hue-oozie-1563465189.24
-drwxr-xr-x   - trazaoper    hue          0 2019-07-18 11:02 /user/hue/oozie/workspaces/hue-oozie-1563465730.05
-drwxr-xr-x   - trazaoper    hue          0 2019-07-18 11:02 /user/hue/oozie/workspaces/hue-oozie-1563465733.02
-drwxr-xr-x   - trazaoper    hue          0 2019-09-24 12:31 /user/hue/oozie/workspaces/hue-oozie-1569346283.58
