@@ -1,0 +1,568 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-16edd6666b6-1090296998046077": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "DESARROLLO - hue",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "3306",
+				"database": "hue",
+				"url": "jdbc:mysql://gnpmcdes11.cloudera.des.gnp.mx:3306/hue",
+				"type": "dev"
+			}
+		},
+		"mysql8-16edd6a6f77-92d7905f86b6141": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "DESARROLLO - amon",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "3306",
+				"database": "amon",
+				"url": "jdbc:mysql://gnpmcdes11.cloudera.des.gnp.mx:3306/amon",
+				"type": "dev"
+			}
+		},
+		"mysql8-16edd6d51c3-38c483069ed65e2d": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "DESARROLLO - metastore",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "3306",
+				"database": "metastore",
+				"url": "jdbc:mysql://gnpmcdes11.cloudera.des.gnp.mx:3306/metastore",
+				"type": "dev"
+			}
+		},
+		"mysql8-16edd6e75d8-10981cd3f7da810e": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "DESARROLLO - nav",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "3306",
+				"database": "nav",
+				"url": "jdbc:mysql://gnpmcdes11.cloudera.des.gnp.mx:3306/nav",
+				"type": "dev"
+			}
+		},
+		"mysql8-16edd6f4798-387248ac5fc0e7f2": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "DESARROLLO - navms",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "3306",
+				"database": "navms",
+				"url": "jdbc:mysql://gnpmcdes11.cloudera.des.gnp.mx:3306/navms",
+				"type": "dev"
+			}
+		},
+		"mysql8-16edd701eb5-991d0b08fb8fab7": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "DESARROLLO - oozie",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "3306",
+				"database": "oozie",
+				"url": "jdbc:mysql://gnpmcdes11.cloudera.des.gnp.mx:3306/oozie",
+				"type": "dev"
+			}
+		},
+		"mysql8-16edd70d3d8-6ef3fc7f60bd978a": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "DESARROLLO - rman",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "3306",
+				"database": "rman",
+				"url": "jdbc:mysql://gnpmcdes11.cloudera.des.gnp.mx:3306/rman",
+				"type": "dev"
+			}
+		},
+		"mysql8-16edd71b01e-1211e168c56e1564": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "DESARROLLO - scm",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "3306",
+				"database": "scm",
+				"url": "jdbc:mysql://gnpmcdes11.cloudera.des.gnp.mx:3306/scm",
+				"type": "dev"
+			}
+		},
+		"mysql8-16edd72f39f-4b1d337c246a9753": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "DESARROLLO - sentry",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "3306",
+				"database": "sentry",
+				"url": "jdbc:mysql://gnpmcdes11.cloudera.des.gnp.mx:3306/sentry",
+				"type": "dev"
+			}
+		},
+		"csvjdbc-16edd85d4be-68154c239e47c71a": {
+			"provider": "generic",
+			"driver": "csvjdbc",
+			"name": "CSV - DB",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"database": "C:\\Users\\Arturo\\Documents\\trendit\\BD CSV",
+				"url": "jdbc:relique:csv:C:\\Users\\Arturo\\Documents\\trendit\\BD CSV",
+				"type": "dev"
+			}
+		},
+		"apache_hive2-16efaf5d7c5-2098362efbee5f3f": {
+			"provider": "generic",
+			"driver": "apache_hive2",
+			"name": "DESARROLLO _ hive",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes12.cloudera.des.gnp.mx",
+				"port": "10000",
+				"database": "default",
+				"url": "jdbc:hive2://gnpmcdes12.cloudera.des.gnp.mx:10000/default",
+				"type": "dev"
+			}
+		},
+		"apache_hive2-16efb5686f8-fd762057db0bcbf": {
+			"provider": "generic",
+			"driver": "apache_hive2",
+			"name": "PRODUCCION _ hive",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcpro03.cloudera.pro.gnp.mx",
+				"port": "10000",
+				"database": "default",
+				"url": "jdbc:hive2://gnpmcpro03.cloudera.pro.gnp.mx:10000/default",
+				"type": "prod"
+			}
+		},
+		"db2-16f1f72d9b3-1f6f8dcce507fa06": {
+			"provider": "db2",
+			"driver": "db2",
+			"name": "DB2 LUW - LOCDB2D",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.80.29",
+				"port": "50210",
+				"database": "LOCDB2D",
+				"url": "jdbc:db2://10.67.80.29:50210/LOCDB2D",
+				"type": "dev",
+				"properties": {
+					"loginTimeout": "20",
+					"retrieveMessagesFromServerOnGetMessage": "true",
+					"progressiveStreaming": "2",
+					"maxStatements": "50",
+					"connectionTimeout": "20"
+				},
+				"provider-properties": {
+					"@dbeaver-trace.append": "false",
+					"@dbeaver-trace.file": "trace",
+					"@dbeaver-trace.level": "0",
+					"@dbeaver-trace.enabled": "false"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.0.21",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			},
+			"custom-properties": {
+				"database.meta.separate.connection": "false"
+			}
+		},
+		"mysql8-16f4868426a-769b67d21a34e6ef": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - hue",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.59.11",
+				"port": "3306",
+				"url": "jdbc:mysql://10.67.59.11:3306/",
+				"type": "prod",
+				"properties": {
+					"connectTimeout": "20000"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			},
+			"custom-properties": {
+				"database.meta.separate.connection": "false"
+			}
+		},
+		"mysql8-16f4889767a-4bf80b51a87f475e": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - amon",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.59.11",
+				"port": "3306",
+				"url": "jdbc:mysql://10.67.59.11:3306/",
+				"type": "prod",
+				"properties": {
+					"connectTimeout": "20000"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			}
+		},
+		"mysql8-16f488a692e-2df23d6342f38b87": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - metastore",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.59.11",
+				"port": "3306",
+				"url": "jdbc:mysql://10.67.59.11:3306/",
+				"type": "prod",
+				"properties": {
+					"connectTimeout": "20000"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			}
+		},
+		"mysql8-16f488df879-3b287e7f7b647a53": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - nav",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.59.11",
+				"port": "3306",
+				"url": "jdbc:mysql://10.67.59.11:3306/",
+				"type": "prod",
+				"properties": {
+					"connectTimeout": "20000"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			}
+		},
+		"mysql8-16f488ed694-4d7b7674eeb723f0": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - navms",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.59.11",
+				"port": "3306",
+				"url": "jdbc:mysql://10.67.59.11:3306/",
+				"type": "prod",
+				"properties": {
+					"connectTimeout": "20000"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			}
+		},
+		"mysql8-16f488fa7b5-7ba36508eb0e7daf": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - oozie",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.59.11",
+				"port": "3306",
+				"url": "jdbc:mysql://10.67.59.11:3306/",
+				"type": "prod",
+				"properties": {
+					"connectTimeout": "20000"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			}
+		},
+		"mysql8-16f48905868-1b6e1a0b50e63f16": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - rman",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.59.11",
+				"port": "3306",
+				"url": "jdbc:mysql://10.67.59.11:3306/",
+				"type": "prod",
+				"properties": {
+					"connectTimeout": "20000"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			}
+		},
+		"mysql8-16f4891002c-4402f5f4ec79977": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - scm",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.59.11",
+				"port": "3306",
+				"url": "jdbc:mysql://10.67.59.11:3306/",
+				"type": "prod",
+				"properties": {
+					"connectTimeout": "20000"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			}
+		},
+		"mysql8-16f48919f6b-717b8f12f3610345": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - sentry",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "10.67.59.11",
+				"port": "3306",
+				"url": "jdbc:mysql://10.67.59.11:3306/",
+				"type": "prod",
+				"properties": {
+					"connectTimeout": "20000"
+				},
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			}
+		},
+		"apache_hive2-16f48a9b76c-2718b017dfbedd8b": {
+			"provider": "generic",
+			"driver": "apache_hive2",
+			"name": "PRODUCCION _ impala",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcpro02.cloudera.pro.gnp.mx",
+				"port": "21050",
+				"database": "default;auth=noSasl",
+				"url": "jdbc:hive2://gnpmcpro02.cloudera.pro.gnp.mx:21050/default;auth=noSasl",
+				"type": "prod"
+			},
+			"custom-properties": {
+				"database.meta.separate.connection": "false"
+			}
+		},
+		"mysql8-16f7c38caf0-293cf22c8dfeb459": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION - root",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"url": "jdbc:mysql://localhost:3306/",
+				"type": "prod",
+				"handlers": {
+					"ssh_tunnel": {
+						"type": "TUNNEL",
+						"enabled": true,
+						"save-password": true,
+						"properties": {
+							"host": "10.67.59.11",
+							"authType": "PASSWORD",
+							"port": 22.0,
+							"implementation": "jsch"
+						}
+					}
+				}
+			}
+		},
+		"mysql8-17064fe8af7-7d03a69aaa301b61": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "PRODUCCION_Kaizen",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "35.239.82.36",
+				"port": "3306",
+				"database": "gnpdbp52",
+				"url": "jdbc:mysql://35.239.82.36:3306/gnpdbp52",
+				"home": "MySQL Binaries",
+				"type": "dev"
+			}
+		},
+		"apache_hive2-17079c6c480-9fdfa019613e1aa": {
+			"provider": "generic",
+			"driver": "apache_hive2",
+			"name": "DESARROLLO _ impala",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "gnpmcdes11.cloudera.des.gnp.mx",
+				"port": "21050",
+				"database": "default;auth=noSasl",
+				"url": "jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:21050/default;auth=noSasl",
+				"type": "dev"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "230,230,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		},
+		"prod": {
+			"name": "Production",
+			"color": "253,221,213",
+			"description": "Production database",
+			"auto-commit": false,
+			"confirm-execute": false,
+			"confirm-data-change": true
+		}
+	}
+}

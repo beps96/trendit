@@ -1,0 +1,2 @@
+
+Invalidate metadata bddlalm.ALM_PAGO_INFO_CompCancel;
