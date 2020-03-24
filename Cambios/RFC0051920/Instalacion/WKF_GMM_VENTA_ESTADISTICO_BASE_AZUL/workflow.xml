@@ -1,0 +1,44 @@
+<workflow-app name="WKF_GMM_VENTA_ESTADISTICO_BASE_AZUL" xmlns="uri:oozie:workflow:0.5">
+    <start to="hive2-11a7"/>
+    <kill name="Kill">
+        <message>Error al realizar la acción. Mensaje de error [${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="hive2-a0a5" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/venta_estadistico/AZUL/sql/HQL_AGREGA_VENTA_ESTADISTICO.hql</script>
+              <param>tabla_final=${tabla_final}</param>
+        </hive2>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-6ef0" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/venta_estadistico/AZUL/sql/GENERA_VENTA_ESTADISTICO_AZUL.hql</script>
+              <param>tabla_stg=${tabla_stg}</param>
+              <param>campo_anio_mes=${campo_anio_mes}</param>
+              <param>tabla_final=${tabla_final}</param>
+        </hive2>
+        <ok to="hive2-a0a5"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-11a7" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://gnpmcdes11.cloudera.des.gnp.mx:10000/default</jdbc-url>
+            <script>/transf/DL_GMM/venta_estadistico/AZUL/sql/INSERT_VENTA_ESTADISTICO_AZUL.hql</script>
+              <param>tabla_stg=${tabla_stg}</param>
+              <param>campo_anio_mes=${campo_anio_mes}</param>
+              <param>tabla_final=${tabla_final}</param>
+        </hive2>
+        <ok to="hive2-6ef0"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>
