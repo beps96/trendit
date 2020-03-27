@@ -1,0 +1,3 @@
+appName=VDI_DLK_TallerProducto_Polizas
+mainClass=vdi_cat_situac_sinies_tmpc
+spark2-submit --class vdi_cat_situac_sinies_tmpc /temp/VDI/DLK_VDI/src/catalogos/vdi_cat_situac_sinies_2.11-1.0.jar --queue root.vida   --driver-class-path /etc/hive/conf/ --master yarn --deploy-mode cluster --driver-memory 20G --num-executors 20 --executor-memory 16G --executor-cores 2 --driver-cores 2 --conf spark.dynamicAllocation.maxExecutors=20 --conf spark.driver.maxResultSize=0 --conf spark.shuffle.service.enabled=true

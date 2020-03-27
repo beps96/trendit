@@ -1,0 +1,10 @@
+0
+bddlcru
+bddlint
+bddlalm
+vdi_poliza
+vdi_poliza_temp
+hive
+overwrite
+vdi_elemento_poliza_relleno
+/transf/DLK_VDI/config/estructuraPolizaVDI.txt

@@ -1,0 +1,6 @@
+TCTIPCOB;EDADMCTC;CPASEGUR;CPASEINI;CPASEADI;FEFINCOB
+SA
+'V'
+0
+ULT_SIT-trim(cdtabla) = 'KCIT46G' and cdempres = '0001' and cdidioma = 'ES'
+/transf/DLK_VDI/config/estructuraCoberturaVDI.txt

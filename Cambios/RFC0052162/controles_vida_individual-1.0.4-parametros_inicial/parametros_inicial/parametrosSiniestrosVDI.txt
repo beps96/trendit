@@ -1,0 +1,11 @@
+bddlcru
+bddlint
+bddlalm
+vdi_siniestro
+vdi_siniestro_pago
+hive
+overwrite
+ksim10t
+ksin30t
+ksim30t
+ksim20t

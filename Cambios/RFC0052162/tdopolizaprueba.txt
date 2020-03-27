@@ -1,0 +1,80 @@
+appName=VDI_DLK_TallerProducto_Polizas
+mainClass=PolizasDC
+spark2-submit --queue root.vida --class PolizasDC --driver-class-path /etc/hive/conf/ --master yarn --deploy-mode cluster --driver-memory 20G --num-executors 20 --executor-memory 16G --executor-cores 3 --driver-cores 3 --conf spark.dynamicAllocation.maxExecutors=25 --conf spark.driver.maxResultSize=0 --conf spark.shuffle.service.enabled=true /temp/VDI/DLK_VDI/src/taller/polizas_2.11-2.1.jar /transf/DLK_VDI/config/paramPolizaVDI.txt BDDLCRU KCIM16T KCIM16H KTPA82T BDDLTRN BDDLALM VDI_ELEMENTO_POLIZA
+20/03/23 20:44:50 INFO yarn.Client: Requesting a new application from cluster with 14 NodeManagers
+20/03/23 20:44:50 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (81920 MB per container)
+20/03/23 20:44:50 INFO yarn.Client: Will allocate AM container, with 22528 MB memory including 2048 MB overhead
+20/03/23 20:44:50 INFO yarn.Client: Setting up container launch context for our AM
+20/03/23 20:44:50 INFO yarn.Client: Setting up the launch environment for our AM container
+20/03/23 20:44:50 INFO yarn.Client: Preparing resources for our AM container
+20/03/23 20:44:50 INFO yarn.Client: Uploading resource file:/temp/VDI/DLK_VDI/src/taller/polizas_2.11-2.1.jar -> hdfs://nameservice1/user/gmmcontra/.sparkStaging/application_1582692083844_152933/polizas_2.11-2.1.jar
+20/03/23 20:44:50 INFO yarn.Client: Uploading resource file:/tmp/spark-1235121f-6c3f-42ea-a519-9b95a2c30635/__spark_conf__2427130206854680085.zip -> hdfs://nameservice1/user/gmmcontra/.sparkStaging/application_1582692083844_152933/__spark_conf__.zip
+20/03/23 20:44:50 INFO spark.SecurityManager: Changing view acls to: gmmcontra
+20/03/23 20:44:50 INFO spark.SecurityManager: Changing modify acls to: gmmcontra
+20/03/23 20:44:50 INFO spark.SecurityManager: Changing view acls groups to: 
+20/03/23 20:44:50 INFO spark.SecurityManager: Changing modify acls groups to: 
+20/03/23 20:44:50 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(gmmcontra); groups with view permissions: Set(); users  with modify permissions: Set(gmmcontra); groups with modify permissions: Set()
+20/03/23 20:44:51 INFO yarn.Client: Submitting application application_1582692083844_152933 to ResourceManager
+20/03/23 20:44:51 INFO impl.YarnClientImpl: Submitted application application_1582692083844_152933
+20/03/23 20:44:52 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:44:52 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: root.vida
+	 start time: 1585017891729
+	 final status: UNDEFINED
+	 tracking URL: http://gnpmcpro03.cloudera.pro.gnp.mx:8088/proxy/application_1582692083844_152933/
+	 user: gmmcontra
+20/03/23 20:44:53 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:44:54 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:44:55 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:44:56 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:44:57 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:44:58 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:44:59 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:45:00 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:45:01 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:45:02 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:45:03 INFO yarn.Client: Application report for application_1582692083844_152933 (state: ACCEPTED)
+20/03/23 20:45:04 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:04 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: gnpecpro09.cloudera.pro.gnp.mx
+	 ApplicationMaster RPC port: 43045
+	 queue: root.vida
+	 start time: 1585017891729
+	 final status: UNDEFINED
+	 tracking URL: http://gnpmcpro03.cloudera.pro.gnp.mx:8088/proxy/application_1582692083844_152933/
+	 user: gmmcontra
+20/03/23 20:45:05 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:06 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:07 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:08 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:09 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:10 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:11 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:12 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:13 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:14 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:15 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:16 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:17 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:18 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:19 INFO yarn.Client: Application report for application_1582692083844_152933 (state: RUNNING)
+20/03/23 20:45:20 INFO yarn.Client: Application report for application_1582692083844_152933 (state: FINISHED)
+20/03/23 20:45:20 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: gnpecpro09.cloudera.pro.gnp.mx
+	 ApplicationMaster RPC port: 43045
+	 queue: root.vida
+	 start time: 1585017891729
+	 final status: SUCCEEDED
+	 tracking URL: http://gnpmcpro03.cloudera.pro.gnp.mx:8088/proxy/application_1582692083844_152933/
+	 user: gmmcontra
+20/03/23 20:45:20 INFO util.ShutdownHookManager: Shutdown hook called
+20/03/23 20:45:20 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-9bd2e630-8938-4464-9426-7a565c014174
+20/03/23 20:45:20 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-1235121f-6c3f-42ea-a519-9b95a2c30635

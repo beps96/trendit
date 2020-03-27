@@ -1,0 +1,6 @@
+bddlcru
+kcim06t
+bddlint
+vdi_kcim06t
+hive
+overwrite

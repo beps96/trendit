@@ -1,0 +1,7 @@
+bddlcru
+crm_participante_sist_ori
+crm_participante
+bddlint
+vdi_bup_consolidado
+hive
+overwrite

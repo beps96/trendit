@@ -1,0 +1,1 @@
+set mapred.min.split.size=838860800;set mapreduce.input.fileinputformat.split.maxsize=1610612736;set hive.exec.reducers.bytes.per.reducer=5442450944;set mapreduce.reduce.memory.mb=10240;
